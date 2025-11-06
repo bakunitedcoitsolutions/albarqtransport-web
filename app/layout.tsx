@@ -11,7 +11,7 @@ import "../src/css/color.css";
 import "../src/css/main.css";
 
 export const metadata: Metadata = {
-  title: "Albarq Transport",
+  title: "Al barq Transport",
   description: "Transportation and logistics company",
 };
 
