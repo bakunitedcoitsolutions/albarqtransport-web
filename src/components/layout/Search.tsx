@@ -1,0 +1,33 @@
+"use client";
+
+import { SearchProps } from "../../types";
+
+export default function Search({ isSearch, handleSearch }: SearchProps) {
+  return (
+    <>
+      <div
+        className="search-wrap"
+        style={{ display: `${isSearch ? "block" : "none"}` }}
+      >
+        <div className="search-inner">
+          <i
+            className="fas fa-times search-close"
+            onClick={handleSearch}
+            id="search-close"
+          />
+          <div className="search-cell">
+            <form method="get">
+              <div className="search-field-holder">
+                <input
+                  type="search"
+                  className="main-search-input"
+                  placeholder="Search..."
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
