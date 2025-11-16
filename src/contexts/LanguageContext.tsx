@@ -1,5 +1,5 @@
 "use client";
-import React, {
+import {
   createContext,
   useContext,
   useEffect,
@@ -32,10 +32,10 @@ interface LanguageProviderProps {
 }
 
 export function LanguageProvider({ children }: LanguageProviderProps) {
-  const [language, setLanguageState] = useState<Language>("ar");
-  const [isRTL, setIsRTL] = useState(true);
-  // const [language, setLanguageState] = useState<Language>("en");
-  // const [isRTL, setIsRTL] = useState(false);
+  // const [language, setLanguageState] = useState<Language>("ar");
+  // const [isRTL, setIsRTL] = useState(true);
+  const [language, setLanguageState] = useState<Language>("en");
+  const [isRTL, setIsRTL] = useState(false);
 
   // Load language from localStorage on mount
   useEffect(() => {
@@ -47,11 +47,11 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
         setIsRTL(savedLanguage === "ar");
       } else {
         // Default to Arabic if no saved language
-        setLanguageState("ar");
-        setIsRTL(true);
+        // setLanguageState("ar");
+        // setIsRTL(true);
         // // Default to English if no saved language
-        // setLanguageState("en");
-        // setIsRTL(false);
+        setLanguageState("en");
+        setIsRTL(false);
       }
     }
   }, []);
