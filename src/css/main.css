@@ -12,8 +12,8 @@ Version: 1.0.0
 	--body: #fff;
 	--black: #000;
 	--white: #fff;
-	--theme: #df1119;
-	--theme2: #F55B1F;
+	--theme: #0e4563;
+	--theme2: #15b5e5;
 	--header: #121315;
 	--text: #666666;
 	--border: #D4DCED;
@@ -237,6 +237,7 @@ span {
 }
 
 .about-section {
+	background-color: var(--white);
 	position: relative;
 }
 
@@ -1055,7 +1056,7 @@ span {
 .contact-wrapper .contact-items .form-clt input,
 .contact-wrapper .contact-items .form-clt textarea {
 	border: 1px solid var(--theme);
-	background: rgba(245, 91, 31, 0.1);
+	background: #0e45631a;
 	color: var(--theme);
 	padding: 16px 20px;
 	line-height: 1;
@@ -1454,7 +1455,7 @@ span {
 .faq-wrapper .faq-accordion .accordion-item .accordion-collapse .accordion-body {
 	padding-left: 30px;
 	padding-top: 15px;
-	color: var(--text);
+	color: var(--text) !important;
 	background-color: var(--white);
 }
 
@@ -2674,6 +2675,7 @@ span {
 .header-1 {
 	margin-left: 250px;
 	position: relative;
+	background-color: var(--white);
 }
 
 @media (max-width: 1899px) {
@@ -3239,10 +3241,6 @@ span {
 	position: relative;
 	height: 100%;
 	padding: 30px 30px;
-}
-
-.offcanvas__wrapper .offcanvas__content .text {
-	color: var(--text);
 }
 
 .offcanvas__wrapper .offcanvas__content .offcanvas__close {
@@ -6498,7 +6496,7 @@ input.main-search-input::placeholder {
 }
 
 .section-bg-2 {
-	background-color: rgba(212, 220, 237, 0.3);
+	background-color: rgba(212, 220, 237, 0.3) !important;
 }
 
 .items-bg {

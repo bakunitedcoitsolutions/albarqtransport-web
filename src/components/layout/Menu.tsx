@@ -1,142 +1,82 @@
 import Link from "next/link";
 
+const menuLinks = [
+  {
+    href: "/",
+    name: "Home",
+    navItemClass: "active menu-thumb",
+  },
+  {
+    href: "/about",
+    name: "About Us",
+    navItemClass: "has-dropdown",
+    submenu: [
+      {
+        href: "/about/our-company",
+        name: "Our Company",
+      },
+      {
+        href: "/about/our-clients",
+        name: "Our Clients",
+      },
+    ],
+  },
+  {
+    href: "/services",
+    name: "Services",
+    submenu: [
+      {
+        href: "/services/water",
+        name: "Water",
+      },
+      {
+        href: "/services/transportation",
+        name: "Transportation",
+      },
+      {
+        href: "/services/lowbed",
+        name: "Lowbed",
+      },
+    ],
+  },
+  {
+    href: "/projects",
+    name: "Projects",
+  },
+  {
+    href: "/certificates",
+    name: "Certificates",
+  },
+  {
+    href: "/contact-us",
+    name: "Contact Us",
+  },
+];
+
 export default function Menu() {
   return (
     <>
       <nav id="mobile-menu" className="d-none d-xl-block">
         <ul>
-          <li className="has-dropdown active menu-thumb">
-            <Link href="/">
-              Home
-              <i className="fa-regular fa-plus" />
-            </Link>
-            <ul className="submenu has-homemenu">
-              <li>
-                <div className="homemenu-items">
-                  <div className="homemenu">
-                    <div className="homemenu-thumb">
-                      <img src="/assets/img/header/home-1.jpg" alt="img" />
-                      <div className="demo-button">
-                        <Link href="/" className="theme-btn">
-                          Multi Page
-                        </Link>
-                        <Link href="/index-one" className="theme-btn">
-                          One Page
-                        </Link>
-                      </div>
-                    </div>
-                    <div className="homemenu-content text-center">
-                      <h4 className="homemenu-title">Home 01</h4>
-                    </div>
-                  </div>
-                  <div className="homemenu">
-                    <div className="homemenu-thumb mb-15">
-                      <img src="/assets/img/header/home-2.jpg" alt="img" />
-                      <div className="demo-button">
-                        <Link href="/index-2" className="theme-btn">
-                          Multi Page
-                        </Link>
-                        <Link href="/index-two" className="theme-btn">
-                          One Page
-                        </Link>
-                      </div>
-                    </div>
-                    <div className="homemenu-content text-center">
-                      <h4 className="homemenu-title">Home 02</h4>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </li>
-          <li className="has-dropdown active d-xl-none">
-            <Link href="/team" className="border-none">
-              Home
-              <i className="fa-regular fa-plus" />
-            </Link>
-            <ul className="submenu">
-              <li>
-                <Link href="/">Home 01</Link>
-              </li>
-              <li>
-                <Link href="/index-2">Home 02</Link>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <Link href="/about">About Us</Link>
-          </li>
-          <li className="has-dropdown">
-            <Link href="/news">
-              Pages
-              <i className="fa-regular fa-plus" />
-            </Link>
-            <ul className="submenu">
-              <li>
-                <Link href="/team">Our Team</Link>
-              </li>
-              <li>
-                <Link href="/team-details">Team Details</Link>
-              </li>
-              <li>
-                <Link href="/pricing">Pricing</Link>
-              </li>
-              <li>
-                <Link href="/faq">Faq's</Link>
-              </li>
-              <li>
-                <Link href="/404">404 Page</Link>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <Link href="/service-details">
-              Services
-              <i className="fa-regular fa-plus" />
-            </Link>
-            <ul className="submenu">
-              <li>
-                <Link href="/service">Services</Link>
-              </li>
-              <li>
-                <Link href="/service-details">Service Details</Link>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <Link href="/project">
-              Projects
-              <i className="fa-regular fa-plus" />
-            </Link>
-            <ul className="submenu">
-              <li>
-                <Link href="/project">Projects</Link>
-              </li>
-              <li>
-                <Link href="/project-details">Project Details</Link>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <Link href="/news">
-              News
-              <i className="fa-regular fa-plus" />
-            </Link>
-            <ul className="submenu">
-              <li>
-                <Link href="/news-grid">News Grid</Link>
-              </li>
-              <li>
-                <Link href="/news">News Standard</Link>
-              </li>
-              <li>
-                <Link href="/news-details">News Details</Link>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <Link href="/contact">Contact Us</Link>
-          </li>
+          {menuLinks.map((link) => (
+            <li key={link.href} className={link.navItemClass}>
+              <Link href={link.href}>
+                {link.name}
+                {link?.submenu && link?.submenu?.length > 0 && (
+                  <i className="fa-regular fa-plus" />
+                )}
+              </Link>
+              {link?.submenu && link?.submenu?.length > 0 && (
+                <ul className="submenu">
+                  {link?.submenu?.map((sublink) => (
+                    <li key={sublink.href}>
+                      <Link href={sublink.href}>{sublink.name}</Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))}
         </ul>
       </nav>
     </>

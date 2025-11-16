@@ -1,4 +1,5 @@
 "use client";
+import { thmSecondary } from "@/utils";
 // import "swiper/css";
 
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
@@ -73,7 +74,7 @@ export default function Testimonial1() {
               <div className="col-lg-7">
                 <div className="testimonial-content">
                   <div className="section-title">
-                    <h6 className="wow fadeInUp">
+                    <h6 className="wow fadeInUp text-theme2!">
                       <i className="fa-regular fa-arrow-left-long" />
                       testimonials
                       <i className="fa-regular fa-arrow-right-long" />
@@ -87,75 +88,39 @@ export default function Testimonial1() {
                   </div>
                   <div className="swiper testimonial-slider mt-3 mt-md-0">
                     <Swiper {...swiperOptions} className="swiper-wrapper">
-                      <SwiperSlide className="swiper-slide">
-                        <div className="testi-content">
-                          <div className="icon">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width={32}
-                              height={32}
-                              viewBox="0 0 32 32"
-                              fill="none"
-                            >
-                              <path d="M0 4V28L12 16V4H0Z" fill="#DF1119" />
-                              <path d="M20 4V28L32 16V4H20Z" fill="#DF1119" />
-                            </svg>
-                            <h4>
-                              Contrary to popular belief, Lorem Ipsum is not
-                              simply random text. It has roots in a piece of
-                              classical Latin literature from 45 BC, making it
-                              over 2000 years old. Richard McClintock !
-                            </h4>
+                      {Array.from({ length: 3 }).map((_, index) => (
+                        <SwiperSlide key={index} className="swiper-slide">
+                          <div className="testi-content">
+                            <div className="icon">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width={32}
+                                height={32}
+                                viewBox="0 0 32 32"
+                                fill="none"
+                              >
+                                <path
+                                  d="M0 4V28L12 16V4H0Z"
+                                  fill={thmSecondary}
+                                />
+                                <path
+                                  d="M20 4V28L32 16V4H20Z"
+                                  fill={thmSecondary}
+                                />
+                              </svg>
+                              <h4>
+                                Contrary to popular belief, Lorem Ipsum is not
+                                simply random text. It has roots in a piece of
+                                classical Latin literature from 45 BC, making it
+                                over 2000 years old. Richard McClintock !
+                              </h4>
+                            </div>
                           </div>
-                        </div>
-                      </SwiperSlide>
-                      <SwiperSlide className="swiper-slide">
-                        <div className="testi-content">
-                          <div className="icon">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width={32}
-                              height={32}
-                              viewBox="0 0 32 32"
-                              fill="none"
-                            >
-                              <path d="M0 4V28L12 16V4H0Z" fill="#DF1119" />
-                              <path d="M20 4V28L32 16V4H20Z" fill="#DF1119" />
-                            </svg>
-                            <h4>
-                              Contrary to popular belief, Lorem Ipsum is not
-                              simply random text. It has roots in a piece of
-                              classical Latin literature from 45 BC, making it
-                              over 2000 years old. Richard McClintock !
-                            </h4>
-                          </div>
-                        </div>
-                      </SwiperSlide>
-                      <SwiperSlide className="swiper-slide">
-                        <div className="testi-content">
-                          <div className="icon">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width={32}
-                              height={32}
-                              viewBox="0 0 32 32"
-                              fill="none"
-                            >
-                              <path d="M0 4V28L12 16V4H0Z" fill="#DF1119" />
-                              <path d="M20 4V28L32 16V4H20Z" fill="#DF1119" />
-                            </svg>
-                            <h4>
-                              Contrary to popular belief, Lorem Ipsum is not
-                              simply random text. It has roots in a piece of
-                              classical Latin literature from 45 BC, making it
-                              over 2000 years old. Richard McClintock !
-                            </h4>
-                          </div>
-                        </div>
-                      </SwiperSlide>
+                        </SwiperSlide>
+                      ))}
                     </Swiper>
                   </div>
-                  <div className="client-img-items">
+                  {/* <div className="client-img-items">
                     <div className="client-image-area">
                       <div className="client-img">
                         <img
@@ -184,7 +149,7 @@ export default function Testimonial1() {
                         <i className="fa-solid fa-arrow-right-long" />
                       </button>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div className="col-lg-6" />

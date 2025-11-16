@@ -6,7 +6,7 @@ export default function OurSkills({ alt }: OurSkillsProps): React.ReactElement {
   return (
     <>
       <section
-        className={`skills-section fix section-padding ${
+        className={`skills-section bg-white! fix section-padding ${
           alt ? "section-bg-2" : " pt-0"
         }`}
       >
@@ -45,13 +45,16 @@ export default function OurSkills({ alt }: OurSkillsProps): React.ReactElement {
                       We Know That Every Decision Has An Impact
                     </h2>
                   </div>
-                  <p className="mt-3 mt-md-0 wow fadeInUp" data-wow-delay=".4s">
+                  <p
+                    className="mt-3 mt-md-0 wow fadeInUp text-gray-500"
+                    data-wow-delay=".4s"
+                  >
                     It is a long established fact that a reader will be
                     distracted the readable content of a page when looking at
                     layout the point of using lorem the is Ipsum less normal
                     distribution of letters.
                   </p>
-                  <div className="skill-feature-items">
+                  {/* <div className="skill-feature-items">
                     <div
                       className="skill-feature wow fadeInUp"
                       data-wow-delay=".2s"
@@ -115,7 +118,7 @@ export default function OurSkills({ alt }: OurSkillsProps): React.ReactElement {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

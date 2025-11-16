@@ -134,10 +134,13 @@ export default function Hero1(): React.ReactElement {
                   <div className="array-button">
                     <button className="array-prevs h1p">
                       <img src="/assets/img/hero/prev.png" alt="img" />
-                      Previews
+                      Previous
                     </button>
-                    <button className="array-nexts h1n">
-                      Next <img src="/assets/img/hero/next.png" alt="img" />
+                    <button className="array-prevs h1p">
+                      Next
+                      <span className="rotate-180">
+                        <img src="/assets/img/hero/prev.png" alt="img" />
+                      </span>
                     </button>
                   </div>
                 </div>
