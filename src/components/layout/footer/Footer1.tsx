@@ -40,7 +40,10 @@ export default function Footer1() {
                   <div className="content">
                     <p className="mb-2! text-white!">Email</p>
                     <h3 className="m-0!">
-                      <Link href={`mailto:${EMAIL}`} className="text-theme2!">
+                      <Link
+                        href={`mailto:${EMAIL}`}
+                        className="text-theme2! lowercase"
+                      >
                         {EMAIL}
                       </Link>
                     </h3>
