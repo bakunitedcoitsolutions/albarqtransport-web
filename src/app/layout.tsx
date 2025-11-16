@@ -16,10 +16,9 @@ import { tanseekArabic } from "@/lib/font";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 
 export const metadata: Metadata = {
-  title:
-    "BAK United Contracting Co | Leading Construction Company in Saudi Arabia",
+  title: "Al-Barq | A Leading Transport Company",
   description:
-    "BAK United Contracting Co. - Premier construction company in Jeddah, Saudi Arabia. 30+ years expertise in excavation, structural work, MEP systems, waterproofing, and finishing. Delivering mega construction projects with excellence since 2008.",
+    "Al-Barq provides reliable water tanker supply and wastewater disposal services across Tabuk and NEOM. Known for timely delivery, eco-friendly practices, and quality service, we are a trusted name in water transport and waste management.",
   icons: {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
