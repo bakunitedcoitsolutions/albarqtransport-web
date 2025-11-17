@@ -4088,13 +4088,20 @@ span {
 }
 
 .hero-1 .hero-image-items {
+	margin-left: 0;
 	margin-right: -48%;
 	position: relative;
+}
+
+[dir="rtl"] .hero-1 .hero-image-items {
+	margin-right: 0;
+	margin-left: -48%;
 }
 
 @media (max-width: 991px) {
 	.hero-1 .hero-image-items {
 		margin-right: 0;
+		margin-left: 0;
 	}
 }
 

@@ -21,7 +21,7 @@ export const ADDRESS_AR =
 export const FACEBOOK = "https://www.facebook.com/bakunited";
 export const LINKEDIN =
   "https://www.linkedin.com/company/bak-united-contracting";
-export const YOUTUBE = "https://www.youtube.com/@bakunited";
+export const YOUTUBE = "https://www.youtube.com/@albarqtransport";
 export const INSTAGRAM = "https://www.instagram.com";
 export const TWITTER = "https://www.twitter.com";
 export const TIKTOK = "https://www.tiktok.com";

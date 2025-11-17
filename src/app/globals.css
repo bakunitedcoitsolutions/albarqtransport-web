@@ -44,13 +44,6 @@
 body {
   background: var(--background);
   color: var(--text);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Font switching based on language - Override CSS variable */
-body.font-latin {
-  --thm-font: var(--thm-font);
-  font-family: var(--thm-font), Arial, Helvetica, sans-serif;
 }
 
 body.font-arabic {
@@ -68,4 +61,47 @@ body.font-arabic h4,
 body.font-arabic h5,
 body.font-arabic h6 {
   font-family: var(--font-arabic), Arial, sans-serif !important;
+}
+
+body.font-arabic label,
+body.font-arabic input,
+body.font-arabic textarea,
+body.font-arabic select {
+  font-size: 1.12em !important;
+}
+
+body.font-arabic button,
+body.font-arabic .btn {
+  font-size: 1.12em !important;
+}
+
+/* Arabic font size adjustments for non-heading elements */
+body.font-arabic p {
+  font-size: 1.15em !important;
+  line-height: 1.9;
+}
+
+body.font-arabic li {
+  font-size: 1.15em !important;
+}
+
+body.font-arabic span {
+  font-size: 1.12em !important;
+}
+
+body.font-arabic a {
+  font-size: 1.12em !important;
+}
+
+/* Force LTR for phone numbers in RTL mode */
+.rtl a[href^="tel:"],
+.rtl a[href*="tel:"],
+.rtl [class*="phone"],
+.rtl [class*="Phone"],
+.rtl [class*="contact"] a[href^="tel:"],
+body.rtl a[href^="tel:"] {
+  direction: ltr !important;
+  unicode-bidi: embed !important;
+  display: inline-block !important;
+  text-align: left !important;
 }

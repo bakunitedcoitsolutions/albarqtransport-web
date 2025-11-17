@@ -1,1 +1,30 @@
-{}
+{
+  "header": {
+    "followUs": "Follow Us:"
+  },
+  "menu": {
+    "home": "Home",
+    "aboutUs": "About Us",
+    "ourCompany": "Our Company",
+    "ourClients": "Our Clients",
+    "services": "Services",
+    "water": "Water",
+    "transportation": "Transportation",
+    "lowbed": "Lowbed",
+    "projects": "Projects",
+    "certificates": "Certificates",
+    "contactUs": "Contact Us"
+  },
+  "offcanvas": {
+    "contactInfo": "Contact Info",
+    "followUs": "Follow Us"
+  },
+  "hero": {
+    "title": "Create the building you want here",
+    "description": "Proactively pontificate client-centered relationships visavis process centric leadership skills. Credibly.",
+    "exploreMore": "Explore More",
+    "play": "Play",
+    "previous": "Previous",
+    "next": "Next"
+  }
+}

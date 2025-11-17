@@ -9,11 +9,13 @@ import { useState } from "react";
 import ModalVideo from "react-modal-video";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const swiperOptions = {
+const getSwiperOptions = (isRTL: boolean) => ({
   modules: [Autoplay, Pagination, Navigation],
   slidesPerView: 2,
   spaceBetween: 30,
+  dir: isRTL ? "rtl" : "ltr",
   autoplay: {
     delay: 2500,
     disableOnInteraction: false,
@@ -58,10 +60,12 @@ const swiperOptions = {
       spaceBetween: 30,
     },
   },
-};
+});
 
 export default function Hero1(): React.ReactElement {
   const [isOpen, setOpen] = useState<boolean>(false);
+  const { isRTL, t } = useLanguage();
+  const swiperOptions = getSwiperOptions(isRTL);
   return (
     <>
       <section className="hero-section hero-1 fix section-padding">
@@ -71,30 +75,34 @@ export default function Hero1(): React.ReactElement {
         <div className="container-fluid">
           <div className="row g-4">
             <div className="col-lg-7">
-              <div className="hero-content">
+              <div className="hero-content bg-theme2!">
                 <div className="vector-shape">
                   <img src="/assets/img/hero/vector.png" alt="img" />
                 </div>
                 <div className="vector-shape-2">
                   <img src="/assets/img/hero/vector-2.png" alt="img" />
                 </div>
-                <h1 className="wow fadeInUp" data-wow-delay=".3s">
-                  Create the <br />
-                  building you <br />
-                  want here
-                </h1>
-                <p className="wow fadeInUp" data-wow-delay=".5s">
-                  Proactively pontificate client-centered relationships visavis
-                  process centric leadership skills. Credibly.
+                <h1
+                  className="wow fadeInUp rtl:text-4xl! rtl:md:text-8xl!"
+                  data-wow-delay=".3s"
+                  dangerouslySetInnerHTML={{ __html: t("hero.title") }}
+                />
+                <p
+                  className="wow fadeInUp rtl:text-2xl! rtl:md:text-3xl!"
+                  data-wow-delay=".5s"
+                >
+                  {t("hero.description")}
                 </p>
                 <div className="hero-button">
                   <Link
                     href="/about"
-                    className="theme-btn bg-white wow fadeInUp"
+                    className="theme-btn bg-white wow fadeInUp rtl:text-2xl! rtl:px-3xl! rtl:md:px-5! rtl:py-4! rtl:md:py-5!"
                     data-wow-delay=".3s"
                   >
-                    Explore More
-                    <i className="fa-regular fa-arrow-right" />
+                    {t("hero.exploreMore")}
+                    <i
+                      className={`fa-regular fa-arrow-right rtl:rotate-180! rtl:pl-5!`}
+                    />
                   </Link>
                   <span
                     className="button-text wow fadeInUp"
@@ -104,9 +112,11 @@ export default function Hero1(): React.ReactElement {
                       onClick={() => setOpen(true)}
                       className="video-btn video-popup"
                     >
-                      <i className="fa-solid fa-play" />
+                      <i className="fa-solid fa-play rtl:rotate-180!" />
                     </a>
-                    <span className="ms-3 d-line">play reel</span>
+                    <span className="ms-3 d-line rtl:text-xl! rtl:mr-5!">
+                      {t("hero.play")}
+                    </span>
                   </span>
                 </div>
               </div>
@@ -114,7 +124,11 @@ export default function Hero1(): React.ReactElement {
             <div className="col-lg-5">
               <div className="hero-image-items">
                 <div className="swiper hero-slider">
-                  <Swiper {...swiperOptions} className="swiper-wrapper">
+                  <Swiper
+                    key={isRTL ? "rtl" : "ltr"}
+                    {...swiperOptions}
+                    className="swiper-wrapper"
+                  >
                     <SwiperSlide className="swiper-slide">
                       <div className="hero-image">
                         <img src="/assets/img/hero/01.jpg" alt="img" />
@@ -132,13 +146,15 @@ export default function Hero1(): React.ReactElement {
                     </SwiperSlide>
                   </Swiper>
                   <div className="array-button">
-                    <button className="array-prevs h1p">
-                      <img src="/assets/img/hero/prev.png" alt="img" />
-                      Previous
+                    <button className="array-prevs h1p direction-ltr">
+                      <span className="rtl:rotate-180">
+                        <img src="/assets/img/hero/prev.png" alt="img" />
+                      </span>
+                      {t("hero.previous")}
                     </button>
-                    <button className="array-prevs h1p">
-                      Next
-                      <span className="rotate-180">
+                    <button className="array-prevs h1p direction-ltr">
+                      {t("hero.next")}
+                      <span className="rotate-180 rtl:rotate-0">
                         <img src="/assets/img/hero/prev.png" alt="img" />
                       </span>
                     </button>

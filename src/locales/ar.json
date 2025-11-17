@@ -1,1 +1,30 @@
-{}
+{
+  "header": {
+    "followUs": "تابعنا:"
+  },
+  "menu": {
+    "home": "الرئيسية",
+    "aboutUs": "من نحن",
+    "ourCompany": "شركتنا",
+    "ourClients": "عملاؤنا",
+    "services": "الخدمات",
+    "water": "المياه",
+    "transportation": "النقل",
+    "lowbed": "المنخفضة",
+    "projects": "المشاريع",
+    "certificates": "الشهادات",
+    "contactUs": "اتصل بنا"
+  },
+  "offcanvas": {
+    "contactInfo": "معلومات الاتصال",
+    "followUs": "تابعنا"
+  },
+  "hero": {
+    "title": "أنشئ المبنى الذي تريده هنا",
+    "description": "نقوم ببناء علاقات موجهة نحو العميل بشكل استباقي مع مهارات القيادة المتمحورة حول العملية. بشكل موثوق.",
+    "exploreMore": "استكشف المزيد",
+    "play": "تشغيل",
+    "previous": "السابق",
+    "next": "التالي"
+  }
+}

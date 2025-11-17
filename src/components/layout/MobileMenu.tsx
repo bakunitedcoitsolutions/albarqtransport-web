@@ -2,146 +2,122 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const menuLinks = [
+const getMenuLinks = (t: (key: string) => string) => [
   {
     href: "/",
-    name: "Home",
-    navItemClass: "active menu-thumb",
+    name: t("menu.home"),
+    navItemClass: "active d-xl-none",
   },
   {
-    href: "/about",
-    name: "About Us",
-    navItemClass: "has-dropdown",
-    submenu: [
-      {
-        href: "/about/our-company",
-        name: "Our Company",
-      },
-      {
-        href: "/about/our-clients",
-        name: "Our Clients",
-      },
-    ],
+    href: "/about-us",
+    name: t("menu.aboutUs"),
   },
   {
     href: "/services",
-    name: "Services",
+    name: t("menu.services"),
     submenu: [
       {
         href: "/services/water",
-        name: "Water",
+        name: t("menu.water"),
       },
       {
         href: "/services/transportation",
-        name: "Transportation",
+        name: t("menu.transportation"),
       },
       {
         href: "/services/lowbed",
-        name: "Lowbed",
+        name: t("menu.lowbed"),
       },
     ],
   },
   {
-    href: "/projects",
-    name: "Projects",
+    href: "/our-clients",
+    name: t("menu.ourClients"),
   },
   {
     href: "/certificates",
-    name: "Certificates",
+    name: t("menu.certificates"),
   },
   {
     href: "/contact-us",
-    name: "Contact Us",
+    name: t("menu.contactUs"),
+    isLast: true,
   },
 ];
 
 export default function MobileMenu() {
-  const [isAccordion, setIsAccordion] = useState(0);
+  const { t } = useLanguage();
+  const menuLinks = getMenuLinks(t);
+  const [isAccordion, setIsAccordion] = useState<number | null>(null);
 
-  const handleAccordion = (key: any) => {
+  const handleAccordion = (key: number) => {
     setIsAccordion((prevState) => (prevState === key ? null : key));
   };
+
   return (
     <>
       <div className="mobile-menu fix mb-3 mean-container">
         <div className="mean-bar">
-          {/* <Link
-            href="/#nav"
-            className="meanmenu-reveal"
-            style={{ right: 0, left: "auto", display: "inline" }}
-          >
-            <span>
-              <span>
-                <span />
-              </span>
-            </span>
-          </Link> */}
           <nav className="mean-nav">
             <ul>
-              <li className="active d-xl-none">
-                <Link href="/">Home</Link>
-              </li>
-              <li className="has-dropdown ">
-                <Link href="/team" className="border-none">
-                  About Us
-                  <i className="fa-regular fa-plus" />
-                </Link>
-                <ul
-                  className="submenu"
-                  style={{ display: `${isAccordion == 1 ? "block" : "none"}` }}
-                >
-                  <li>
-                    <Link href="/about/our-company">Our Company</Link>
+              {menuLinks.map((link) => {
+                const hasSubmenu = link.submenu && link.submenu.length > 0;
+                let accordionKey: number | null = null;
+                if (link.href === "/services") accordionKey = 1;
+                const isOpen =
+                  accordionKey !== null && isAccordion === accordionKey;
+
+                return (
+                  <li
+                    key={link.href}
+                    className={`${link.navItemClass} ${
+                      link.isLast ? "mean-last" : ""
+                    }`}
+                  >
+                    <Link
+                      href={link.href}
+                      className={link.href === "/about" ? "border-none" : ""}
+                    >
+                      {link.name}
+                      {hasSubmenu && <i className="fa-regular fa-plus" />}
+                    </Link>
+                    {hasSubmenu && accordionKey !== null && (
+                      <>
+                        <ul
+                          className="submenu"
+                          style={{
+                            display: isOpen ? "block" : "none",
+                          }}
+                        >
+                          {link.submenu?.map((sublink) => (
+                            <li key={sublink.href}>
+                              <Link
+                                href={sublink.href}
+                                className="rtl:text-2xl!"
+                              >
+                                {sublink.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                        <a
+                          className="mean-expand"
+                          onClick={() => handleAccordion(accordionKey!)}
+                          style={{ fontSize: 18 }}
+                        >
+                          {isOpen ? (
+                            <i className="fa-regular fa-minus" />
+                          ) : (
+                            <i className="fa-regular fa-plus" />
+                          )}
+                        </a>
+                      </>
+                    )}
                   </li>
-                  <li>
-                    <Link href="/about/our-clients">Our Clients</Link>
-                  </li>
-                </ul>
-                <a
-                  className="mean-expand"
-                  onClick={() => handleAccordion(1)}
-                  style={{ fontSize: 18 }}
-                >
-                  <i className="far fa-plus" />
-                </a>
-              </li>
-              <li className="has-dropdown">
-                <Link href="/news">
-                  Services
-                  <i className="fa-regular fa-plus" />
-                </Link>
-                <ul
-                  className="submenu"
-                  style={{ display: `${isAccordion == 2 ? "block" : "none"}` }}
-                >
-                  <li>
-                    <Link href="/services/water">Water</Link>
-                  </li>
-                  <li>
-                    <Link href="/services/transportation">Transportation</Link>
-                  </li>
-                  <li>
-                    <Link href="/services/lowbed">Lowbed</Link>
-                  </li>
-                </ul>
-                <a
-                  className="mean-expand"
-                  onClick={() => handleAccordion(2)}
-                  style={{ fontSize: 18 }}
-                >
-                  <i className="far fa-plus" />
-                </a>
-              </li>
-              <li>
-                <Link href="/projects">Projects</Link>
-              </li>
-              <li>
-                <Link href="/certificates">Certificates</Link>
-              </li>
-              <li className="mean-last">
-                <Link href="/contact-us">Contact Us</Link>
-              </li>
+                );
+              })}
             </ul>
           </nav>
         </div>

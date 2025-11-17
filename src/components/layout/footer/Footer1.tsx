@@ -17,32 +17,40 @@ export default function Footer1() {
         style={{ backgroundImage: 'url("/assets/img/footer/bg.jpg")' }}
       >
         <div className="container">
-          <div className="w-full py-10!">
-            <div className="grid! grid-cols-12! gap-12! items-start!">
-              <div className="col-span-12! md:col-span-6! xl:col-span-4!">
+          <div className="w-full py-6! md:py-10!">
+            <div className="grid! grid-cols-1! sm:grid-cols-2! lg:grid-cols-3! gap-6! md:gap-8! xl:gap-12! items-start!">
+              <div className="w-full!">
                 <Link
                   href="/"
-                  className="wow fadeInUp d-block"
+                  className="wow fadeInUp d-block mb-4! md:mb-0!"
                   data-wow-delay=".2s"
                 >
-                  <Image src={logo} width={250} height={100} alt={altLogo} />
+                  <Image
+                    src={logo}
+                    width={250}
+                    height={100}
+                    alt={altLogo}
+                    className="w-full! max-w-[200px]! md:max-w-[250px]! h-auto!"
+                  />
                 </Link>
               </div>
 
-              <div className="col-span-12! md:col-span-6! xl:col-span-4!">
+              <div className="w-full!">
                 <div
                   className="contact-info-items wow fadeInUp d-flex align-items-start gap-3!"
                   data-wow-delay=".6s"
                 >
-                  <div className="icon-wrapper d-flex align-items-center justify-content-center w-10! h-10! bg-white! rounded-full! shrink-0!">
-                    <i className="fa-solid fa-envelope text-theme! text-xl!" />
+                  <div className="icon-wrapper d-flex align-items-center justify-content-center w-10! h-10! md:w-12! md:h-12! bg-white! rounded-full! shrink-0!">
+                    <i className="fa-solid fa-envelope text-theme! text-lg! md:text-xl!" />
                   </div>
-                  <div className="content">
-                    <p className="mb-2! text-white!">Email</p>
-                    <h3 className="m-0!">
+                  <div className="content flex-1!">
+                    <p className="mb-2! text-white! text-sm! md:text-base!">
+                      Email
+                    </p>
+                    <h3 className="m-0! text-sm! md:text-base! lg:text-lg!">
                       <Link
                         href={`mailto:${EMAIL}`}
-                        className="text-theme2! lowercase"
+                        className="text-theme2! lowercase break-all!"
                       >
                         {EMAIL}
                       </Link>
@@ -51,20 +59,22 @@ export default function Footer1() {
                 </div>
               </div>
 
-              <div className="col-span-12! md:col-span-6! xl:col-span-4!">
+              <div className="w-full!">
                 <div
                   className="contact-info-items wow fadeInUp d-flex align-items-start gap-3!"
                   data-wow-delay=".8s"
                 >
-                  <div className="icon-wrapper d-flex align-items-center justify-content-center w-10! h-10! bg-white! rounded-full! shrink-0!">
-                    <i className="fa-solid fa-phone-volume text-theme! text-xl!" />
+                  <div className="icon-wrapper d-flex align-items-center justify-content-center w-10! h-10! md:w-12! md:h-12! bg-white! rounded-full! shrink-0!">
+                    <i className="fa-solid fa-phone-volume text-theme! text-lg! md:text-xl!" />
                   </div>
 
-                  <div className="content">
-                    <p className="mb-2! text-white!">Phone</p>
-                    <h3 className="m-0!">
+                  <div className="content flex-1!">
+                    <p className="mb-2! text-white! text-sm! md:text-base!">
+                      Phone
+                    </p>
+                    <h3 className="m-0! text-sm! md:text-base! lg:text-lg!">
                       <Link
-                        className="text-theme2!"
+                        className="text-theme2! break-all!"
                         href={`tel:${PHONE.replaceAll(" ", "")}`}
                       >
                         {PHONE}
