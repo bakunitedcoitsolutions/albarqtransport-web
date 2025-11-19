@@ -4,11 +4,15 @@ import { thmSecondary } from "@/utils";
 
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import PreHeader from "../elements/PreHeader";
+import { en as enTranslations, ar as arTranslations } from "@/locales";
 
-const swiperOptions = {
+const getSwiperOptions = (isRTL: boolean) => ({
   modules: [Autoplay, Pagination, Navigation],
   slidesPerView: 1,
   spaceBetween: 30,
+  dir: isRTL ? "rtl" : "ltr",
   autoplay: {
     delay: 2500,
     disableOnInteraction: false,
@@ -53,19 +57,25 @@ const swiperOptions = {
       spaceBetween: 30,
     },
   },
-};
+});
 
 export default function Testimonial1() {
+  const { isRTL, t, language } = useLanguage();
+  const swiperOptions = getSwiperOptions(isRTL);
+  const translations = language === "ar" ? arTranslations : enTranslations;
+  const testimonials = (translations.testimonial?.testimonials || []) as Array<{
+    text: string;
+  }>;
   return (
     <>
       <section className="testimonial-section fix section-padding section-bg">
-        <div className="arrow-shape float-bob-y">
+        <div className="arrow-shape float-bob-y rtl:scale-x-[-1]! rtl:right-0! rtl:left-[unset]!">
           <img src="/assets/img/testimonial/arrow-shape.png" alt="img" />
         </div>
-        <div className="building-shape float-bob-x">
+        <div className="building-shape float-bob-x rtl:right-0! rtl:left-[unset]">
           <img src="/assets/img/testimonial/building-shape.png" alt="img" />
         </div>
-        <div className="testimonial-image">
+        <div className="testimonial-image rtl:left-0! rtl:right-[unset]!">
           <img src="/assets/img/testimonial/testimonial-image.jpg" alt="img" />
         </div>
         <div className="container">
@@ -74,21 +84,21 @@ export default function Testimonial1() {
               <div className="col-lg-7">
                 <div className="testimonial-content">
                   <div className="section-title">
-                    <h6 className="wow fadeInUp text-theme2!">
-                      <i className="fa-regular fa-arrow-left-long" />
-                      testimonials
-                      <i className="fa-regular fa-arrow-right-long" />
-                    </h6>
+                    <PreHeader text={t("testimonial.preHeader")} />
                     <h2
-                      className="text-white wow fadeInUp"
+                      className="text-white wow fadeInUp rtl:text-3xl! rtl:md:text-4xl! rtl:xl:text-6xl!"
                       data-wow-delay=".2s"
                     >
-                      what client’s say <br /> about us!
+                      {t("testimonial.title")}
                     </h2>
                   </div>
                   <div className="swiper testimonial-slider mt-3 mt-md-0">
-                    <Swiper {...swiperOptions} className="swiper-wrapper">
-                      {Array.from({ length: 3 }).map((_, index) => (
+                    <Swiper
+                      key={isRTL ? "rtl" : "ltr"}
+                      {...swiperOptions}
+                      className="swiper-wrapper"
+                    >
+                      {testimonials.map((testimonial, index) => (
                         <SwiperSlide key={index} className="swiper-slide">
                           <div className="testi-content">
                             <div className="icon">
@@ -108,11 +118,8 @@ export default function Testimonial1() {
                                   fill={thmSecondary}
                                 />
                               </svg>
-                              <h4>
-                                Contrary to popular belief, Lorem Ipsum is not
-                                simply random text. It has roots in a piece of
-                                classical Latin literature from 45 BC, making it
-                                over 2000 years old. Richard McClintock !
+                              <h4 className="rtl:text-xl! rtl:md:text-3xl!">
+                                {testimonial.text}
                               </h4>
                             </div>
                           </div>

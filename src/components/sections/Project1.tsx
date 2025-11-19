@@ -2,8 +2,16 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
+import { useLanguage } from "@/contexts/LanguageContext";
+import PreHeader from "../elements/PreHeader";
+import { en as enTranslations, ar as arTranslations } from "@/locales";
 
 export default function Project1() {
+  const { isRTL, t, language } = useLanguage();
+  const translations = language === "ar" ? arTranslations : enTranslations;
+  const projects = (translations.project?.projects || []) as Array<{
+    name: string;
+  }>;
   useEffect(() => {
     const mainBoxes = document.querySelectorAll(".main-box, .box");
     const getSlide = mainBoxes.length - 1;
@@ -39,76 +47,44 @@ export default function Project1() {
       >
         <div className="container">
           <div className="section-title text-center">
-            <h6 className="wow fadeInUp">
-              <i className="fa-regular fa-arrow-left-long" />
-              our complete projects
-              <i className="fa-regular fa-arrow-right-long" />
-            </h6>
-            <h2 className="wow fadeInUp" data-wow-delay=".2s">
-              Our Latest Projects
+            <PreHeader text={t("project.preHeader")} />
+            <h2
+              className="wow fadeInUp rtl:text-3xl! rtl:md:text-4xl! rtl:xl:text-6xl!"
+              data-wow-delay=".2s"
+            >
+              {t("project.title")}
             </h2>
           </div>
         </div>
         <div className="container-fluid">
           <div className="project-wrapper">
             <div className="main-box">
-              <div className="box wow fadeInUp">
-                <div className="project-content">
-                  <h3>
-                    <Link href="/project-details">quality equipment</Link>
-                  </h3>
-                  <Link href="/project-details" className="icon">
-                    <i className="fa-solid fa-arrow-right" />
-                  </Link>
-                </div>
-              </div>
-
-              <div className="box bg-1 wow fadeInUp wow" data-wow-delay=".2s">
-                <div className="project-content">
-                  <h3>
-                    <Link href="/project-details">quality equipment</Link>
-                  </h3>
-                  <Link href="/project-details" className="icon">
-                    <i className="fa-solid fa-arrow-right" />
-                  </Link>
-                </div>
-              </div>
-
-              <div
-                className="box bg-2 active wow fadeInUp wow"
-                data-wow-delay=".4s"
-              >
-                <div className="project-content">
-                  <h3>
-                    <Link href="/project-details">quality equipment</Link>
-                  </h3>
-                  <Link href="/project-details" className="icon">
-                    <i className="fa-solid fa-arrow-right" />
-                  </Link>
-                </div>
-              </div>
-
-              <div className="box bg-3 wow fadeInUp wow" data-wow-delay=".6s">
-                <div className="project-content">
-                  <h3>
-                    <Link href="/project-details">quality equipment</Link>
-                  </h3>
-                  <Link href="/project-details" className="icon">
-                    <i className="fa-solid fa-arrow-right" />
-                  </Link>
-                </div>
-              </div>
-
-              <div className="box bg-4 wow fadeInUp wow" data-wow-delay=".8s">
-                <div className="project-content">
-                  <h3>
-                    <Link href="/project-details">quality equipment</Link>
-                  </h3>
-                  <Link href="/project-details" className="icon">
-                    <i className="fa-solid fa-arrow-right" />
-                  </Link>
-                </div>
-              </div>
+              {projects.map((project, index) => {
+                const delay = index * 0.2;
+                const bgClass =
+                  index === 0
+                    ? ""
+                    : index === 1
+                    ? "bg-1"
+                    : index === 2
+                    ? "bg-2 active"
+                    : index === 3
+                    ? "bg-3"
+                    : "bg-4";
+                return (
+                  <div
+                    key={index}
+                    className={`box ${bgClass} wow fadeInUp`}
+                    data-wow-delay={delay > 0 ? `.${delay}s` : undefined}
+                  >
+                    <div className="project-content flex! justify-center!">
+                      <h3 className="rtl:text-3xl!">
+                        <a>{project.name}</a>
+                      </h3>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

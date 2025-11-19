@@ -1,54 +1,25 @@
 "use client";
 
 import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import PreHeader from "../elements/PreHeader";
+import { en as enTranslations, ar as arTranslations } from "@/locales";
 
 interface FaqItem {
-  id: number;
   question: string;
   answer: string;
-  delay: string;
 }
 
-const faqItems: FaqItem[] = [
-  {
-    id: 1,
-    question: "How long should a business plan be?",
-    answer:
-      "It is a long established fact that a reader will be distracted the readable content of a page when looking at layout the point of using lorem the is Ipsum less normal distribution of letters.",
-    delay: ".1s",
-  },
-  {
-    id: 2,
-    question: "What are the different stages of a construction project?",
-    answer:
-      "It is a long established fact that a reader will be distracted the readable content of a page when looking at layout the point of using lorem the is Ipsum less normal distribution of letters.",
-    delay: ".3s",
-  },
-  {
-    id: 3,
-    question: "What are the different stages of a construction project?",
-    answer:
-      "It is a long established fact that a reader will be distracted the readable content of a page when looking at layout the point of using lorem the is Ipsum less normal distribution of letters.",
-    delay: ".5s",
-  },
-  {
-    id: 4,
-    question: "What are the different stages of a construction project?",
-    answer:
-      "It is a long established fact that a reader will be distracted the readable content of a page when looking at layout the point of using lorem the is Ipsum less normal distribution of letters.",
-    delay: ".6s",
-  },
-  {
-    id: 5,
-    question: "What are the different stages of a construction project?",
-    answer:
-      "It is a long established fact that a reader will be distracted the readable content of a page when looking at layout the point of using lorem the is Ipsum less normal distribution of letters.",
-    delay: ".7s",
-  },
-];
-
 export default function Faq() {
+  const { isRTL, t, language } = useLanguage();
   const [isAccordion, setIsAccordion] = useState<number | null>(1);
+
+  const translations = language === "ar" ? arTranslations : enTranslations;
+  const faqItems = (translations.faq?.faqs || []) as FaqItem[];
+  const features = (translations.faq?.features || []) as Array<{
+    title: string;
+    description: string;
+  }>;
 
   const handleAccordion = (key: number) => {
     setIsAccordion((prevState) => {
@@ -63,7 +34,7 @@ export default function Faq() {
         className="faq-section fix section-padding section-bg-2 bg-cover"
         style={{ backgroundImage: 'url("assets/img/faq/bg-shape.png")' }}
       >
-        <div className="track-shape float-bob-x">
+        <div className="track-shape float-bob-x rtl:scale-x-[-1]! rtl:left-[5%]!">
           <img src="/assets/img/track.png" alt="img" />
         </div>
         <div className="container">
@@ -72,87 +43,98 @@ export default function Faq() {
               <div className="col-lg-6">
                 <div className="faq-content">
                   <div className="section-title">
-                    <h6 className="wow fadeInUp">
-                      <i className="fa-regular fa-arrow-left-long" />
-                      faq
-                      <i className="fa-regular fa-arrow-right-long" />
-                    </h6>
-                    <h2 className="wow fadeInUp" data-wow-delay=".2s">
-                      your frequently ask &amp; <br /> questions
+                    <PreHeader text={t("faq.preHeader")} />
+                    <h2
+                      className="wow fadeInUp rtl:text-4xl! rtl:md:text-5xl! rtl:xl:text-6xl!"
+                      data-wow-delay=".2s"
+                    >
+                      {t("faq.title")}
                     </h2>
                   </div>
-                  <p className="mt-3 mt-md-0 wow fadeInUp" data-wow-delay=".4s">
-                    It is a long established fact that a reader will be
-                    distracted the readable content of a page when looking at
-                    layout the point of using lorem the is Ipsum less normal
-                    distribution of letters.
+                  <p
+                    className="mt-3 mt-md-0 wow fadeInUp rtl:text-lg! rtl:md:text-xl! rtl:xl:text-2xl!"
+                    data-wow-delay=".4s"
+                  >
+                    {t("faq.description")}
                   </p>
-                  <div className="icon-items wow fadeInUp" data-wow-delay=".2s">
-                    <div className="icon">
-                      <i className="fa-regular fa-check" />
+                  {features.map((feature, index) => (
+                    <div
+                      key={index}
+                      className="icon-items wow fadeInUp"
+                      data-wow-delay={index === 0 ? ".2s" : ".4s"}
+                    >
+                      <div className="icon">
+                        <i className="fa-regular fa-check" />
+                      </div>
+                      <div className="content">
+                        <h5 className="rtl:text-xl! rtl:md:text-2xl! rtl:xl:text-3xl!">
+                          {feature.title}
+                        </h5>
+                        <span className="rtl:text-lg! rtl:md:text-xl! rtl:xl:text-2xl!">
+                          {feature.description}
+                        </span>
+                      </div>
                     </div>
-                    <div className="content">
-                      <h5>UNIQUE PROJECTS</h5>
-                      <span>
-                        It is a long established fact that a reader will be
-                        distracted the readable content of a page when
-                      </span>
-                    </div>
-                  </div>
-                  <div className="icon-items wow fadeInUp" data-wow-delay=".4s">
-                    <div className="icon">
-                      <i className="fa-regular fa-check" />
-                    </div>
-                    <div className="content">
-                      <h5>UNIQUE PROJECTS</h5>
-                      <span>
-                        It is a long established fact that a reader will be
-                        distracted the readable content of a page when
-                      </span>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
               <div className="col-lg-6">
                 <div className="faq-accordion">
                   <div className="accordion" id="accordion">
-                    {faqItems.map((item) => (
-                      <div
-                        key={item.id}
-                        className="accordion-item mb-3 wow fadeInUp"
-                        data-wow-delay={item.delay}
-                      >
-                        <h5 className="accordion-header">
-                          <button
-                            onClick={() => handleAccordion(item.id)}
-                            className={
-                              isAccordion === item.id
-                                ? "accordion-button"
-                                : "accordion-button collapsed"
-                            }
-                            type="button"
-                            aria-expanded={isAccordion === item.id}
-                            aria-controls={`faq${item.id}`}
-                          >
-                            {item.question}
-                          </button>
-                        </h5>
+                    {faqItems.map((item, index) => {
+                      const delay =
+                        index === 0
+                          ? ".1s"
+                          : index === 1
+                          ? ".3s"
+                          : index === 2
+                          ? ".5s"
+                          : index === 3
+                          ? ".6s"
+                          : ".7s";
+                      return (
                         <div
-                          id={`faq${item.id}`}
-                          className={
-                            isAccordion === item.id
-                              ? "accordion-collapse show"
-                              : "accordion-collapse collapse"
-                          }
-                          style={{
-                            display: isAccordion === item.id ? "block" : "none",
-                          }}
-                          data-bs-parent="#accordion"
+                          key={index}
+                          className="accordion-item mb-3 wow fadeInUp"
+                          data-wow-delay={delay}
                         >
-                          <div className="accordion-body">{item.answer}</div>
+                          <h5 className="accordion-header">
+                            <button
+                              onClick={() => handleAccordion(index + 1)}
+                              className={
+                                isAccordion === index + 1
+                                  ? "accordion-button"
+                                  : "accordion-button collapsed"
+                              }
+                              type="button"
+                              aria-expanded={isAccordion === index + 1}
+                              aria-controls={`faq${index + 1}`}
+                            >
+                              <span className="rtl:text-xl! rtl:md:text-2xl! rtl:xl:text-3xl!">
+                                {item.question}
+                              </span>
+                            </button>
+                          </h5>
+                          <div
+                            id={`faq${index + 1}`}
+                            className={
+                              isAccordion === index + 1
+                                ? "accordion-collapse show"
+                                : "accordion-collapse collapse"
+                            }
+                            style={{
+                              display:
+                                isAccordion === index + 1 ? "block" : "none",
+                            }}
+                            data-bs-parent="#accordion"
+                          >
+                            <div className="accordion-body rtl:text-lg! rtl:md:text-xl! rtl:xl:text-2xl!">
+                              {item.answer}
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 </div>
               </div>

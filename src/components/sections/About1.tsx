@@ -3,16 +3,33 @@
 import { useState } from "react";
 import ModalVideo from "react-modal-video";
 import "../../../node_modules/react-modal-video/css/modal-video.css";
+import { useLanguage } from "@/contexts/LanguageContext";
+
 export default function About1() {
   const [isOpen, setOpen] = useState<boolean>(false);
+  const { isRTL } = useLanguage();
   return (
     <>
       <section className="about-section fix section-padding" id="about">
-        <div className="about-shape-1 float-bob-x">
-          <img src="/assets/img/about/about-shape-1.png" alt="img" />
+        <div className="about-shape-1 float-bob-x rtl:scale-x-[-1]! rtl:right-0! rtl:bottom-0! rtl:top-[unset]!">
+          <img
+            src={
+              isRTL
+                ? "/assets/img/about/about-shape-2.png"
+                : "/assets/img/about/about-shape-1.png"
+            }
+            alt="img"
+          />
         </div>
-        <div className="about-shape-2 float-bob-x">
-          <img src="/assets/img/about/about-shape-2.png" alt="img" />
+        <div className="about-shape-2 float-bob-x rtl:top-0! rtl:left-[120px]!">
+          <img
+            src={
+              isRTL
+                ? "/assets/img/about/about-shape-1.png"
+                : "/assets/img/about/about-shape-2.png"
+            }
+            alt="img"
+          />
         </div>
         <div className="container">
           <div className="about-wrapper">

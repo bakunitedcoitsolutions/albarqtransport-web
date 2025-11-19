@@ -1,8 +1,14 @@
+"use client";
+
+import { useLanguage } from "@/contexts/LanguageContext";
+import PreHeader from "../elements/PreHeader";
+
 interface OurSkillsProps {
   alt?: boolean;
 }
 
 export default function OurSkills({ alt }: OurSkillsProps): React.ReactElement {
+  const { t, isRTL } = useLanguage();
   return (
     <>
       <section
@@ -10,11 +16,25 @@ export default function OurSkills({ alt }: OurSkillsProps): React.ReactElement {
           alt ? "section-bg-2" : " pt-0"
         }`}
       >
-        <div className="shape-1 float-bob-x">
-          <img src="/assets/img/skills/shape-1.png" alt="img" />
+        <div className="shape-1 float-bob-x rtl:scale-x-[-1]! rtl:bottom-[15%]!">
+          <img
+            src={
+              isRTL
+                ? "/assets/img/skills/shape-2.png"
+                : "/assets/img/skills/shape-1.png"
+            }
+            alt="img"
+          />
         </div>
-        <div className="shape-2 float-bob-y">
-          <img src="/assets/img/skills/shape-2.png" alt="img" />
+        <div className="shape-2 float-bob-y rtl:scale-x-[-1]! rtl:top-[40%]!">
+          <img
+            src={
+              isRTL
+                ? "/assets/img/skills/shape-1.png"
+                : "/assets/img/skills/shape-2.png"
+            }
+            alt="img"
+          />
         </div>
         <div className="container">
           <div className="skills-wrapper">
@@ -36,23 +56,19 @@ export default function OurSkills({ alt }: OurSkillsProps): React.ReactElement {
               <div className="col-lg-6">
                 <div className="skill-content">
                   <div className="section-title">
-                    <h6 className="wow fadeInUp">
-                      <i className="fa-regular fa-arrow-left-long" />
-                      our skills
-                      <i className="fa-regular fa-arrow-right-long" />
-                    </h6>
-                    <h2 className="wow fadeInUp" data-wow-delay=".2s">
-                      We Know That Every Decision Has An Impact
+                    <PreHeader text={t("skills.preHeader")} />
+                    <h2
+                      className="wow fadeInUp rtl:text-4xl! rtl:md:text-5xl! rtl:xl:text-6xl!"
+                      data-wow-delay=".2s"
+                    >
+                      {t("skills.title")}
                     </h2>
                   </div>
                   <p
-                    className="mt-3 mt-md-0 wow fadeInUp text-gray-500"
+                    className="mt-3 mt-md-0 wow fadeInUp text-gray-500 rtl:text-lg! rtl:md:text-xl! rtl:xl:text-2xl!"
                     data-wow-delay=".4s"
                   >
-                    It is a long established fact that a reader will be
-                    distracted the readable content of a page when looking at
-                    layout the point of using lorem the is Ipsum less normal
-                    distribution of letters.
+                    {t("skills.description")}
                   </p>
                   {/* <div className="skill-feature-items">
                     <div

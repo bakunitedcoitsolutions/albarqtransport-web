@@ -83,12 +83,12 @@ export default function Hero1(): React.ReactElement {
                   <img src="/assets/img/hero/vector-2.png" alt="img" />
                 </div>
                 <h1
-                  className="wow fadeInUp rtl:text-4xl! rtl:md:text-8xl!"
+                  className="wow fadeInUp text-2xl! md:text-4xl! xl:text-6xl! rtl:text-4xl! md:rtl:text-6xl! rtl:xl:text-8xl!"
                   data-wow-delay=".3s"
                   dangerouslySetInnerHTML={{ __html: t("hero.title") }}
                 />
                 <p
-                  className="wow fadeInUp rtl:text-2xl! rtl:md:text-3xl!"
+                  className="wow fadeInUp text-base! md:text-lg! xl:text-xl! rtl:text-lg! md:rtl:text-2xl! rtl:xl:text-3xl!"
                   data-wow-delay=".5s"
                 >
                   {t("hero.description")}
@@ -96,7 +96,7 @@ export default function Hero1(): React.ReactElement {
                 <div className="hero-button">
                   <Link
                     href="/about"
-                    className="theme-btn bg-white wow fadeInUp rtl:text-2xl! rtl:px-3xl! rtl:md:px-5! rtl:py-4! rtl:md:py-5!"
+                    className="theme-btn bg-white wow fadeInUp text-sm! md:text-base! xl:text-lg! rtl:text-xl! rtl:md:text-2xl! rtl:px-3xl! rtl:md:px-5! rtl:py-4! rtl:md:py-5!"
                     data-wow-delay=".3s"
                   >
                     {t("hero.exploreMore")}

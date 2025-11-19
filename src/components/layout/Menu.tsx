@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { SERVICES } from "@/utils";
 
 const getMenuLinks = (t: (key: string) => string) => [
   {
@@ -16,20 +17,10 @@ const getMenuLinks = (t: (key: string) => string) => [
     href: "/services",
     name: t("menu.services"),
     navItemClass: "has-dropdown",
-    submenu: [
-      {
-        href: "/services/water",
-        name: t("menu.water"),
-      },
-      {
-        href: "/services/transportation",
-        name: t("menu.transportation"),
-      },
-      {
-        href: "/services/lowbed",
-        name: t("menu.lowbed"),
-      },
-    ],
+    submenu: SERVICES.map((service) => ({
+      href: service.href,
+      name: t(service.translationKey),
+    })),
   },
   {
     href: "/our-clients",

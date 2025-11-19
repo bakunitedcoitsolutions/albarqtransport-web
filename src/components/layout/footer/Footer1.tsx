@@ -1,11 +1,15 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 
-import { ADDRESS, EMAIL, PHONE, SOCIALS } from "@/utils";
+import { ADDRESS, ADDRESS_AR, EMAIL, PHONE, SOCIALS, SERVICES } from "@/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Footer1() {
-  const { isRTL } = useLanguage();
+  const { isRTL, t } = useLanguage();
+  const address = isRTL ? ADDRESS_AR : ADDRESS;
+  const footerServices = SERVICES; // Show all services
   const logo = isRTL
     ? "/assets/img/albarq/logos/logo_ar.png"
     : "/assets/img/albarq/logos/logo_en.png";
@@ -44,10 +48,10 @@ export default function Footer1() {
                     <i className="fa-solid fa-envelope text-theme! text-lg! md:text-xl!" />
                   </div>
                   <div className="content flex-1!">
-                    <p className="mb-2! text-white! text-sm! md:text-base!">
-                      Email
+                    <p className="mb-2! text-white! text-sm! md:text-base! rtl:text-lg! rtl:md:text-xl! rtl:lg:text-3xl!">
+                      {t("footer.email")}
                     </p>
-                    <h3 className="m-0! text-sm! md:text-base! lg:text-lg!">
+                    <h3 className="m-0! text-sm! md:text-base! lg:text-lg! rtl:text-lg! rtl:md:text-xl! rtl:lg:text-2xl!">
                       <Link
                         href={`mailto:${EMAIL}`}
                         className="text-theme2! lowercase break-all!"
@@ -69,10 +73,10 @@ export default function Footer1() {
                   </div>
 
                   <div className="content flex-1!">
-                    <p className="mb-2! text-white! text-sm! md:text-base!">
-                      Phone
+                    <p className="mb-2! text-white! text-sm! md:text-base! rtl:text-lg! rtl:md:text-xl! rtl:lg:text-3xl!">
+                      {t("footer.phone")}
                     </p>
-                    <h3 className="m-0! text-sm! md:text-base! lg:text-lg!">
+                    <h3 className="m-0! text-sm! md:text-base! lg:text-lg! rtl:text-lg! rtl:md:text-xl! rtl:lg:text-2xl!">
                       <Link
                         className="text-theme2! break-all!"
                         href={`tel:${PHONE.replaceAll(" ", "")}`}
@@ -94,14 +98,13 @@ export default function Footer1() {
               >
                 <div className="single-footer-widget">
                   <div className="widget-head">
-                    <h5>About Company</h5>
+                    <h5 className="rtl:text-xl! rtl:lg:text-2xl!">
+                      {t("footer.aboutCompany")}
+                    </h5>
                   </div>
                   <div className="footer-content">
-                    <p>
-                      Al Barq Transport is a leading transportation and
-                      logistics company in Saudi Arabia, providing reliable and
-                      efficient transport solutions for businesses and
-                      individuals.
+                    <p className="rtl:text-lg! rtl:md:text-xl! rtl:lg:text-2xl!">
+                      {t("footer.companyDescription")}
                     </p>
                     <div className="social-icon d-flex align-items-center">
                       {SOCIALS.map((social) => (
@@ -127,43 +130,70 @@ export default function Footer1() {
               >
                 <div className="single-footer-widget">
                   <div className="widget-head">
-                    <h5>Quick Link</h5>
+                    <h5 className="rtl:text-xl! rtl:lg:text-2xl!">
+                      {t("footer.quickLinks")}
+                    </h5>
                   </div>
                   <ul className="list-area">
                     <li>
                       <Link href="/">
-                        <i className="fa-solid fa-chevrons-right" />
-                        Home
+                        <i
+                          className={`fa-solid fa-chevrons-right rtl:rotate-180! rtl:ml-2! rtl:text-base!`}
+                        />
+                        <span className="rtl:text-lg! rtl:md:text-xl! rtl:lg:text-2xl!">
+                          {t("menu.home")}
+                        </span>
                       </Link>
                     </li>
                     <li>
                       <Link href="/about/our-company">
-                        <i className="fa-solid fa-chevrons-right" />
-                        About Us
+                        <i
+                          className={`fa-solid fa-chevrons-right rtl:rotate-180! rtl:ml-2! rtl:text-base!`}
+                        />
+                        <span className="rtl:text-lg! rtl:md:text-xl! rtl:lg:text-2xl!">
+                          {t("menu.aboutUs")}
+                        </span>
                       </Link>
                     </li>
                     <li>
                       <Link href="/services">
-                        <i className="fa-solid fa-chevrons-right" />
-                        Services
+                        <i
+                          className={`fa-solid fa-chevrons-right rtl:rotate-180! rtl:ml-2! rtl:text-base!`}
+                        />
+                        <span className="rtl:text-lg! rtl:md:text-xl! rtl:lg:text-2xl!">
+                          {t("menu.services")}
+                        </span>
                       </Link>
                     </li>
                     <li>
                       <Link href="/projects">
-                        <i className="fa-solid fa-chevrons-right" />
-                        Projects
+                        <i
+                          className={`fa-solid fa-chevrons-right rtl:rotate-180! rtl:ml-2! rtl:text-base!`}
+                        />
+                        <span className="rtl:text-lg! rtl:md:text-xl! rtl:lg:text-2xl!">
+                          {t("menu.projects")}
+                        </span>
                       </Link>
                     </li>
                     <li>
                       <Link href="/certificates">
-                        <i className="fa-solid fa-chevrons-right" />
-                        Certificates
+                        <i
+                          className={`fa-solid fa-chevrons-right rtl:rotate-180! rtl:ml-2!`}
+                        />
+
+                        <span className="rtl:text-lg! rtl:md:text-xl! rtl:lg:text-2xl!">
+                          {t("menu.certificates")}
+                        </span>
                       </Link>
                     </li>
                     <li>
                       <Link href="/contact-us">
-                        <i className="fa-solid fa-chevrons-right" />
-                        Contact Us
+                        <i
+                          className={`fa-solid fa-chevrons-right rtl:rotate-180! rtl:ml-2! rtl:text-base!`}
+                        />
+                        <span className="rtl:text-lg! rtl:md:text-xl! rtl:lg:text-2xl!">
+                          {t("menu.contactUs")}
+                        </span>
                       </Link>
                     </li>
                   </ul>
@@ -175,27 +205,29 @@ export default function Footer1() {
               >
                 <div className="single-footer-widget">
                   <div className="widget-head">
-                    <h5>Our Services</h5>
+                    <h5 className="rtl:text-xl! rtl:lg:text-2xl!">
+                      {t("footer.ourServices")}
+                    </h5>
                   </div>
                   <ul className="list-area">
-                    <li>
-                      <Link href="/services/water">
-                        <i className="fa-solid fa-chevrons-right" />
-                        Water
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/services/transportation">
-                        <i className="fa-solid fa-chevrons-right" />
-                        Transportation
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/services/lowbed">
-                        <i className="fa-solid fa-chevrons-right" />
-                        Lowbed
-                      </Link>
-                    </li>
+                    {footerServices.map((service) => {
+                      const serviceKey = service.translationKey.replace(
+                        "menu.",
+                        ""
+                      );
+                      return (
+                        <li key={service.href}>
+                          <Link href={service.href} className="">
+                            <i
+                              className={`fa-solid fa-chevrons-right rtl:rotate-180! rtl:ml-2! rtl:text-base!`}
+                            />
+                            <span className="rtl:text-lg! rtl:md:text-xl! rtl:lg:text-2xl!">
+                              {t(`menu.${serviceKey}`)}
+                            </span>
+                          </Link>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               </div>
@@ -205,11 +237,15 @@ export default function Footer1() {
               >
                 <div className="single-footer-widget">
                   <div className="widget-head">
-                    <h5>Address</h5>
+                    <h5 className="rtl:text-xl! rtl:lg:text-2xl!">
+                      {t("footer.address")}
+                    </h5>
                   </div>
                   <div className="footer-gallery">
                     <div className="gallery-wrap">
-                      <p className="text-[#d9d9d9cc]!">{ADDRESS}</p>
+                      <p className="text-[#d9d9d9cc]! rtl:text-lg! rtl:md:text-xl! rtl:lg:text-2xl!">
+                        {address}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -217,17 +253,12 @@ export default function Footer1() {
             </div>
           </div>
           <div className="footer-bottom">
-            {/* <p>
-              {t("footer.copyrightText")} {year}{" "}
-              <Link href="/">{t("footer.companyName")}</Link>{" "}
-              {t("footer.allRightsReserved")}
-            </p> */}
-            <p className="text-center!">
-              Copyright © {new Date().getFullYear()}{" "}
+            <p className="text-center! rtl:text-lg! rtl:md:text-xl! rtl:lg:text-2xl!">
+              {t("footer.copyright")} {new Date().getFullYear()}{" "}
               <Link className="text-theme2!" href="/">
-                Al Barq Transport
+                {t("footer.companyName")}
               </Link>{" "}
-              All Rights Reserved
+              {t("footer.allRightsReserved")}
             </p>
           </div>
         </div>

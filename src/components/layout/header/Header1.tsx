@@ -60,7 +60,7 @@ export default function Header1({ scroll, handleOffCanvas }: HeaderProps) {
       <div id="header-sticky" className={`header-1 ${scroll ? "sticky" : ""}`}>
         <div className="px-4 mega-menu-wrapper">
           <div className="header-main">
-            <div className="logo d-none">
+            <div className="logo">
               <Link href="/" className="header-logo">
                 <Image
                   src={logo}

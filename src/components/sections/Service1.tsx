@@ -4,14 +4,18 @@ import Link from "next/link";
 
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import PreHeader from "../elements/PreHeader";
+import { SERVICES } from "@/utils";
 
-const swiperOptions = {
+const getSwiperOptions = (isRTL: boolean) => ({
   modules: [Autoplay, Pagination, Navigation],
   spaceBetween: 30,
   speed: 2000,
   loop: true,
+  dir: isRTL ? "rtl" : "ltr",
   autoplay: {
-    delay: 2000,
+    delay: 992000,
     disableOnInteraction: false,
   },
   pagination: {
@@ -24,7 +28,7 @@ const swiperOptions = {
   },
   breakpoints: {
     1399: {
-      slidesPerView: 4,
+      slidesPerView: 3,
     },
     1199: {
       slidesPerView: 3,
@@ -42,9 +46,11 @@ const swiperOptions = {
       slidesPerView: 1,
     },
   },
-};
+});
 
 export default function Service1() {
+  const { isRTL, t } = useLanguage();
+  const swiperOptions = getSwiperOptions(isRTL);
   return (
     <>
       <section
@@ -53,16 +59,12 @@ export default function Service1() {
       >
         <div className="container">
           <div className="section-title text-center">
-            <h6 className="wow fadeInUp text-theme2!">
-              <i className="fa-regular fa-arrow-left-long" />
-              WHAT WE Do
-              <i className="fa-regular fa-arrow-right-long" />
-            </h6>
-            <h2 className="wow fadeInUp text-white" data-wow-delay=".2s">
-              We Offers Cost Efficient
-              <br />
-              Transport Shipping
-            </h2>
+            <PreHeader text={t("service.whatWeDo")} />
+            <h2
+              className="wow fadeInUp text-white rtl:text-3xl! rtl:md:text-4xl!"
+              data-wow-delay=".2s"
+              dangerouslySetInnerHTML={{ __html: t("service.title") }}
+            />
           </div>
           <div className="array-button">
             <button className="array-prev h1p">
@@ -75,32 +77,49 @@ export default function Service1() {
         </div>
         <div className="container-fluid">
           <div className="swiper service-slider">
-            <Swiper {...swiperOptions} className="swiper-wrapper">
-              {Array.from({ length: 8 }).map((_, index) => (
-                <SwiperSlide key={index} className="swiper-slide">
-                  <div className="service-box-items">
-                    <div className="service-thumb">
-                      <img src="/assets/img/service/01.jpg" alt="img" />
-                      <div className="icon">
-                        <i className="fa-regular fa-truck-fast" />
+            <Swiper
+              key={isRTL ? "rtl" : "ltr"}
+              {...swiperOptions}
+              className="swiper-wrapper"
+            >
+              {SERVICES.map((service, index) => {
+                const serviceKey = service.translationKey.replace("menu.", "");
+                return (
+                  <SwiperSlide
+                    key={service.href}
+                    className="swiper-slide flex! flex-col!"
+                  >
+                    <div className="service-box-items">
+                      <div className="service-thumb">
+                        <img src="/assets/img/service/01.jpg" alt="img" />
+                        <div className="icon">
+                          <i className="fa-regular fa-truck-fast" />
+                        </div>
+                      </div>
+                      <div className="service-content">
+                        <h2 className="number">{index + 1}</h2>
+                        <h3 className="rtl:text-3xl!">
+                          <Link href={service.href}>
+                            {t(`service.${serviceKey}.name`)}
+                          </Link>
+                        </h3>
+                        <p className="text-black! rtl:text-xl!">
+                          {t(`service.${serviceKey}.description`)}
+                        </p>
+                        <Link
+                          href={service.href}
+                          className="link-btn rtl:text-base!"
+                        >
+                          {t("service.exploreMore")}{" "}
+                          <i
+                            className={`fa-solid fa-arrow-right rtl:mr-2! rtl:rotate-[260deg]!`}
+                          />
+                        </Link>
                       </div>
                     </div>
-                    <div className="service-content">
-                      <h2 className="number">{index + 1}</h2>
-                      <h3>
-                        <Link href="/service-details">Road Fright</Link>
-                      </h3>
-                      <p className="text-black!">
-                        Consectetur Phasellus a odio vel sapien pharetra
-                        placerat.
-                      </p>
-                      <Link href="/service-details" className="link-btn">
-                        Explore More <i className="fa-solid fa-arrow-right" />
-                      </Link>
-                    </div>
-                  </div>
-                </SwiperSlide>
-              ))}
+                  </SwiperSlide>
+                );
+              })}
             </Swiper>
           </div>
         </div>

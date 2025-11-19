@@ -105,3 +105,9 @@ body.rtl a[href^="tel:"] {
   display: inline-block !important;
   text-align: left !important;
 }
+
+@media (max-width: 575px) {
+  .header-logo img {
+    max-width: 200px !important;
+  }
+}

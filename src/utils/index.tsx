@@ -71,6 +71,58 @@ export const SERVICES_LINKS = [
   "/services/finishing-work",
 ];
 
+export interface ServiceItem {
+  href: string;
+  translationKey: string;
+}
+
+export const SERVICES: ServiceItem[] = [
+  {
+    href: "/services/sand",
+    translationKey: "menu.sand",
+  },
+  {
+    href: "/services/aggregate",
+    translationKey: "menu.aggregate",
+  },
+  {
+    href: "/services/stone",
+    translationKey: "menu.stone",
+  },
+  {
+    href: "/services/sub-base",
+    translationKey: "menu.subBase",
+  },
+  {
+    href: "/services/soil",
+    translationKey: "menu.soil",
+  },
+  {
+    href: "/services/drinking-water",
+    translationKey: "menu.drinkingWater",
+  },
+  {
+    href: "/services/waste-water",
+    translationKey: "menu.wasteWater",
+  },
+  {
+    href: "/services/lowbed",
+    translationKey: "menu.lowbed",
+  },
+  {
+    href: "/services/flatbed",
+    translationKey: "menu.flatbed",
+  },
+  {
+    href: "/services/waste-removal",
+    translationKey: "menu.wasteRemoval",
+  },
+  {
+    href: "/services/heavy-equipment-rental",
+    translationKey: "menu.heavyEquipmentRental",
+  },
+];
+
 export const SERVICES_ICONS = [
   <span key="excavation" className="react-icon-wrapper">
     <GiMineTruck size={60} />

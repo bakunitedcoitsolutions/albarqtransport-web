@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { SERVICES } from "@/utils";
 
 const getMenuLinks = (t: (key: string) => string) => [
   {
@@ -17,20 +18,10 @@ const getMenuLinks = (t: (key: string) => string) => [
   {
     href: "/services",
     name: t("menu.services"),
-    submenu: [
-      {
-        href: "/services/water",
-        name: t("menu.water"),
-      },
-      {
-        href: "/services/transportation",
-        name: t("menu.transportation"),
-      },
-      {
-        href: "/services/lowbed",
-        name: t("menu.lowbed"),
-      },
-    ],
+    submenu: SERVICES.map((service) => ({
+      href: service.href,
+      name: t(service.translationKey),
+    })),
   },
   {
     href: "/our-clients",
@@ -82,15 +73,15 @@ export default function MobileMenu() {
                     >
                       {link.name}
                       {hasSubmenu && <i className="fa-regular fa-plus" />}
-                    </Link>
+                </Link>
                     {hasSubmenu && accordionKey !== null && (
                       <>
-                        <ul
-                          className="submenu"
+                <ul
+                  className="submenu"
                           style={{
                             display: isOpen ? "block" : "none",
                           }}
-                        >
+                >
                           {link.submenu?.map((sublink) => (
                             <li key={sublink.href}>
                               <Link
@@ -99,18 +90,18 @@ export default function MobileMenu() {
                               >
                                 {sublink.name}
                               </Link>
-                            </li>
+                  </li>
                           ))}
-                        </ul>
-                        <a
-                          className="mean-expand"
+                </ul>
+                <a
+                  className="mean-expand"
                           onClick={() => handleAccordion(accordionKey!)}
-                          style={{ fontSize: 18 }}
-                        >
+                  style={{ fontSize: 18 }}
+                >
                           {isOpen ? (
                             <i className="fa-regular fa-minus" />
                           ) : (
-                            <i className="fa-regular fa-plus" />
+                  <i className="fa-regular fa-plus" />
                           )}
                         </a>
                       </>
