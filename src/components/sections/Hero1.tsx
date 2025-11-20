@@ -62,6 +62,15 @@ const getSwiperOptions = (isRTL: boolean) => ({
   },
 });
 
+const HERO_IMAGES = [
+  "/assets/img/albarq/banner/banner-1.jpg",
+  "/assets/img/albarq/banner/banner-2.jpg",
+  "/assets/img/albarq/banner/banner-3.jpg",
+  "/assets/img/albarq/banner/banner-4.jpg",
+  "/assets/img/albarq/banner/banner-5.jpg",
+  "/assets/img/albarq/banner/banner-6.jpg",
+];
+
 export default function Hero1(): React.ReactElement {
   const [isOpen, setOpen] = useState<boolean>(false);
   const { isRTL, t } = useLanguage();
@@ -129,21 +138,13 @@ export default function Hero1(): React.ReactElement {
                     {...swiperOptions}
                     className="swiper-wrapper"
                   >
-                    <SwiperSlide className="swiper-slide">
-                      <div className="hero-image">
-                        <img src="/assets/img/hero/01.jpg" alt="img" />
-                      </div>
-                    </SwiperSlide>
-                    <SwiperSlide className="swiper-slide">
-                      <div className="hero-image">
-                        <img src="/assets/img/hero/02.jpg" alt="img" />
-                      </div>
-                    </SwiperSlide>
-                    <SwiperSlide className="swiper-slide">
-                      <div className="hero-image">
-                        <img src="/assets/img/hero/01.jpg" alt="img" />
-                      </div>
-                    </SwiperSlide>
+                    {HERO_IMAGES.map((image, index) => (
+                      <SwiperSlide key={index} className="swiper-slide">
+                        <div className="hero-image">
+                          <img src={image} alt="img" />
+                        </div>
+                      </SwiperSlide>
+                    ))}
                   </Swiper>
                   <div className="array-button">
                     <button className="array-prevs h1p direction-ltr">

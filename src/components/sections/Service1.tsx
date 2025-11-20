@@ -91,13 +91,15 @@ export default function Service1() {
                   >
                     <div className="service-box-items">
                       <div className="service-thumb">
-                        <img src="/assets/img/service/01.jpg" alt="img" />
-                        <div className="icon">
-                          <i className="fa-regular fa-truck-fast" />
-                        </div>
+                        <img
+                          src={service.homeImage}
+                          alt={t(`service.${serviceKey}.name`)}
+                        />
                       </div>
                       <div className="service-content">
-                        <h2 className="number">{index + 1}</h2>
+                        <h2 className="number rtl:left-[30px]! rtl:right-[unset]!">
+                          {index + 1}
+                        </h2>
                         <h3 className="rtl:text-3xl!">
                           <Link href={service.href}>
                             {t(`service.${serviceKey}.name`)}
@@ -108,7 +110,7 @@ export default function Service1() {
                         </p>
                         <Link
                           href={service.href}
-                          className="link-btn rtl:text-base!"
+                          className="link-btn rtl:text-base! rtl:xl:text-lg!"
                         >
                           {t("service.exploreMore")}{" "}
                           <i

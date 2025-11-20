@@ -218,5 +218,23 @@
     "copyright": "Copyright ©",
     "companyName": "Al Barq Transport",
     "allRightsReserved": "All Rights Reserved"
+  },
+  "about": {
+    "preHeader": "about us",
+    "title": "Leading Transport Services for Construction Sites",
+    "ceo": {
+      "name": "Mahmood Ahmed",
+      "title": "Founder & CEO",
+      "company": "Al-Barq Transport",
+      "bio": "Under the visionary leadership of our Founder & CEO, Mahmood Ahmed, Al-Barq Transport has grown from a local transport company to a leading force in construction site transport services across Tabuk and NEOM. His unwavering commitment to excellence, innovation, and client satisfaction has been the driving force behind our success and reputation for delivering exceptional transport solutions."
+    },
+    "companyDescription": "Al-Barq Transport delivers exceptional transport solutions for construction sites across Tabuk and NEOM. With 20+ years of expertise since 2004, we specialize in material transport, water supply, waste management, and heavy equipment transport, ensuring quality, safety, and timely delivery.",
+    "keyPoint1": "Material Transport & Supply",
+    "keyPoint2": "Water Transport Services",
+    "keyPoint3": "Waste Management Solutions",
+    "keyPoint4": "Heavy Equipment Transport",
+    "keyPoint5": "Timely Delivery Guarantee",
+    "keyPoint6": "Eco-Friendly Practices",
+    "learnMore": "Learn More"
   }
 }

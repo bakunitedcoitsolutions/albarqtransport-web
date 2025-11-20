@@ -74,52 +74,64 @@ export const SERVICES_LINKS = [
 export interface ServiceItem {
   href: string;
   translationKey: string;
+  homeImage: string;
 }
 
 export const SERVICES: ServiceItem[] = [
   {
     href: "/services/sand",
     translationKey: "menu.sand",
+    homeImage: "/assets/img/albarq/services/home/sand-supply.jpg",
   },
   {
     href: "/services/aggregate",
     translationKey: "menu.aggregate",
+    homeImage: "/assets/img/albarq/services/home/aggregate-supply.jpg",
   },
   {
     href: "/services/stone",
     translationKey: "menu.stone",
+    homeImage: "/assets/img/albarq/services/home/stone-supply.jpg",
   },
   {
     href: "/services/sub-base",
     translationKey: "menu.subBase",
+    homeImage: "/assets/img/albarq/services/home/sub-base-supply.jpg",
   },
   {
     href: "/services/soil",
     translationKey: "menu.soil",
+    homeImage: "/assets/img/albarq/services/home/soil-supply.jpg",
   },
   {
     href: "/services/drinking-water",
     translationKey: "menu.drinkingWater",
+    homeImage: "/assets/img/albarq/services/home/drinking-water-supply.jpg",
   },
   {
     href: "/services/waste-water",
     translationKey: "menu.wasteWater",
+    homeImage: "/assets/img/albarq/services/home/waste-water-truck.jpg",
   },
   {
     href: "/services/lowbed",
     translationKey: "menu.lowbed",
+    homeImage: "/assets/img/albarq/services/home/lowbed.jpg",
   },
   {
     href: "/services/flatbed",
     translationKey: "menu.flatbed",
+    homeImage: "/assets/img/albarq/services/home/flatbed.jpg",
   },
   {
     href: "/services/waste-removal",
     translationKey: "menu.wasteRemoval",
+    homeImage: "/assets/img/albarq/services/home/waste-removal-truck.jpg",
   },
   {
     href: "/services/heavy-equipment-rental",
     translationKey: "menu.heavyEquipmentRental",
+    homeImage: "/assets/img/albarq/services/home/heavy-equipment.jpg",
   },
 ];
 
