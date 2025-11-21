@@ -43,12 +43,19 @@ export default function OurSkills({ alt }: OurSkillsProps): React.ReactElement {
                 <div className="row g-4">
                   <div className="col-lg-7 wow fadeInUp" data-wow-delay=".2s">
                     <div className="skills-image">
-                      <img src="/assets/img/skills/01.jpg" alt="img" />
+                      <img
+                        src="/assets/img/albarq/skills/skill-1.jpg"
+                        alt="img"
+                      />
                     </div>
                   </div>
                   <div className="col-lg-5 wow fadeInUp" data-wow-delay=".4s">
-                    <div className="skills-image">
-                      <img src="/assets/img/skills/02.jpg" alt="img" />
+                    <div className="skills-image lg:h-full!">
+                      <img
+                        src="/assets/img/albarq/skills/skill-2.jpg"
+                        alt="img"
+                        className="lg:h-full!"
+                      />
                     </div>
                   </div>
                 </div>

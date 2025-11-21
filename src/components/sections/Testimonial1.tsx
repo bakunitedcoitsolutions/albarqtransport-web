@@ -76,7 +76,7 @@ export default function Testimonial1() {
           <img src="/assets/img/testimonial/building-shape.png" alt="img" />
         </div>
         <div className="testimonial-image rtl:left-0! rtl:right-[unset]!">
-          <img src="/assets/img/testimonial/testimonial-image.jpg" alt="img" />
+          <img src="/assets/img/albarq/testimonial-sidebar.jpg" alt="img" />
         </div>
         <div className="container">
           <div className="testimonial-wrapper">

@@ -129,6 +129,27 @@
       }
     ]
   },
+  "equipment": {
+    "preHeader": "our equipment",
+    "title": "Our Fleet & Equipment",
+    "items": [
+      {
+        "name": "Dump Trucks"
+      },
+      {
+        "name": "Water Tankers"
+      },
+      {
+        "name": "Lowbed Trailers"
+      },
+      {
+        "name": "Flatbed Trucks"
+      },
+      {
+        "name": "Excavators"
+      }
+    ]
+  },
   "faq": {
     "preHeader": "faq",
     "title": "Your Frequently Asked Questions",
@@ -190,20 +211,12 @@
     "preHeader": "Blog & News",
     "title": "Latest News & Blog",
     "byAdmin": "By Admin",
-    "category": "Transport",
+    "category": "Construction",
     "readMore": "Read More",
     "items": [
       {
-        "title": "Efficient Material Transport Solutions for Construction Sites",
-        "description": "Discover how Al-Barq Transport provides reliable and timely delivery of construction materials including sand, aggregate, and soil across Tabuk and NEOM regions. Our eco-friendly practices ensure quality service."
-      },
-      {
-        "title": "Heavy Equipment Transport Services Now Available",
-        "description": "We now offer specialized lowbed and flatbed transport services for heavy machinery and construction equipment. Safe and reliable transport solutions for your construction needs."
-      },
-      {
-        "title": "Water Transport and Waste Management Services",
-        "description": "Professional drinking water supply and waste water removal services for construction sites. Ensuring proper water management with eco-friendly practices."
+        "title": "Inside Saudi Arabia's construction surge: three key takeaways",
+        "description": "As a shorthand, everything you need to know about the Saudi Arabian construction industry can be gleaned from the drive from the airport to the capital, Riyadh. Along the route – a distance of around 35km (21 miles) – even the most unobservant of people will be struck by the sheer amount of construction work taking place."
       }
     ]
   },

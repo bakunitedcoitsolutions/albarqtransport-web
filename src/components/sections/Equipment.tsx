@@ -1,15 +1,14 @@
 "use client";
 
 import { useEffect } from "react";
-import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 import PreHeader from "../elements/PreHeader";
 import { en as enTranslations, ar as arTranslations } from "@/locales";
 
-export default function Project1() {
+export default function Equipment() {
   const { isRTL, t, language } = useLanguage();
   const translations = language === "ar" ? arTranslations : enTranslations;
-  const projects = (translations.project?.projects || []) as Array<{
+  const equipment = ((translations as any).equipment?.items || []) as Array<{
     name: string;
   }>;
   useEffect(() => {
@@ -39,47 +38,50 @@ export default function Project1() {
       });
     };
   }, []);
+
+  const equipmentImages = [
+    "/assets/img/albarq/equipment/dump-truck.jpg",
+    "/assets/img/albarq/equipment/water-tanker.jpg",
+    "/assets/img/albarq/equipment/low-bed.jpg",
+    "/assets/img/albarq/equipment/flat-bed.jpg",
+    "/assets/img/albarq/equipment/excavator.jpg",
+  ];
+
   return (
     <>
       <section
         className="project-section bg-white! fix section-padding"
-        id="projects"
+        id="equipment"
       >
         <div className="container">
           <div className="section-title text-center">
-            <PreHeader text={t("project.preHeader")} />
+            <PreHeader text={t("equipment.preHeader")} />
             <h2
               className="wow fadeInUp rtl:text-3xl! rtl:md:text-4xl! rtl:xl:text-6xl!"
               data-wow-delay=".2s"
             >
-              {t("project.title")}
+              {t("equipment.title")}
             </h2>
           </div>
         </div>
         <div className="container-fluid">
           <div className="project-wrapper">
             <div className="main-box">
-              {projects.map((project, index) => {
+              {equipment.map((item, index) => {
                 const delay = index * 0.2;
-                const bgClass =
-                  index === 0
-                    ? ""
-                    : index === 1
-                    ? "bg-1"
-                    : index === 2
-                    ? "bg-2 active"
-                    : index === 3
-                    ? "bg-3"
-                    : "bg-4";
+                const image = equipmentImages[index] || equipmentImages[0];
                 return (
                   <div
                     key={index}
-                    className={`box ${bgClass} wow fadeInUp`}
+                    className="box wow fadeInUp bg-cover! bg-center! bg-no-repeat!"
+                    style={{
+                      backgroundImage: `url(${image})`,
+                    }}
                     data-wow-delay={delay > 0 ? `.${delay}s` : undefined}
                   >
                     <div className="project-content flex! justify-center!">
                       <h3 className="rtl:text-3xl!">
-                        <a>{project.name}</a>
+                        <a>{item.name}</a>
                       </h3>
                     </div>
                   </div>

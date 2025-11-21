@@ -7,7 +7,7 @@ import Faq from "@/components/sections/Faq";
 import Hero1 from "@/components/sections/Hero1";
 import News1 from "@/components/sections/News1";
 import OurSkills from "@/components/sections/OurSkills";
-import Project1 from "@/components/sections/Project1";
+import Equipment from "@/components/sections/Equipment";
 import Service1 from "@/components/sections/Service1";
 import Team1 from "@/components/sections/Team1";
 import Testimonial1 from "@/components/sections/Testimonial1";
@@ -21,7 +21,7 @@ export default function HomeOne(): React.ReactElement {
         <CtaBanner />
         <OurSkills />
         <Testimonial1 />
-        <Project1 />
+        <Equipment />
         <Faq />
         <Team1 />
         <Contact />

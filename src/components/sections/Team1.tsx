@@ -1,28 +1,25 @@
 "use client";
 
-import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 import PreHeader from "../elements/PreHeader";
 import { SERVICES } from "@/utils";
 
-// Filter the 4 services: Sand, Aggregate, Soil, Sub base
 const selectedServices = SERVICES.filter(
   (service) =>
     service.href === "/services/sand" ||
     service.href === "/services/aggregate" ||
     service.href === "/services/soil" ||
-    service.href === "/services/sub-base"
+    service.href === "/services/stone"
 );
 
 export default function Team1() {
-  const { t, isRTL } = useLanguage();
+  const { t } = useLanguage();
 
-  // Service images array (can be updated with actual service images)
   const serviceImages = [
-    "/assets/img/team/01.jpg", // Sand
-    "/assets/img/team/02.jpg", // Aggregate
-    "/assets/img/team/03.jpg", // Soil
-    "/assets/img/team/04.jpg", // Sub base
+    "/assets/img/albarq/material/sand.jpg", // Sand
+    "/assets/img/albarq/material/aggregate.jpg", // Aggregate
+    "/assets/img/albarq/material/stone.jpg", // Stone
+    "/assets/img/albarq/material/soil.jpg", // Soil
   ];
 
   return (

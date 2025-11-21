@@ -15,9 +15,8 @@ export const thmSecondary = "#15b5e5";
 export const EMAIL = "info@albarqtransport.com";
 export const PHONE = "+966 50 119 8042";
 export const ADDRESS =
-  "Jeddah - Al-Safa District - Ahmed Bin Al-Banna Street - Postal Code: 23453 - Supplemental Number: 4469";
-export const ADDRESS_AR =
-  "جدة - حي الصفا - شارع أحمد بن البناء - الرمز البريدي: 23453 - الرقم الإضافي: 4469";
+  "JDSA7222، 7222 عبدالله البستاني، 5189, Al-Safa, Jeddah 23453, Saudi Arabia - Supplemental Number: 4469";
+export const ADDRESS_AR = ADDRESS;
 export const FACEBOOK = "https://www.facebook.com/bakunited";
 export const LINKEDIN =
   "https://www.linkedin.com/company/bak-united-contracting";

@@ -7,10 +7,11 @@ import Faq from "@/components/sections/Faq";
 import Hero1 from "@/components/sections/Hero1";
 import News1 from "@/components/sections/News1";
 import OurSkills from "@/components/sections/OurSkills";
-import Project1 from "@/components/sections/Project1";
+import Equipment from "@/components/sections/Equipment";
 import Service1 from "@/components/sections/Service1";
 import Team1 from "@/components/sections/Team1";
 import Testimonial1 from "@/components/sections/Testimonial1";
+import Certificates from "@/components/sections/Certificates";
 
 export default function HomePage(): React.ReactElement {
   return (
@@ -22,12 +23,13 @@ export default function HomePage(): React.ReactElement {
         <CtaBanner />
         <OurSkills />
         <Testimonial1 />
-        <Project1 />
+        <Equipment />
         <Faq />
         <Team1 />
         <Contact />
         <News1 />
         <Brand1 />
+        <Certificates />
       </Layout>
     </>
   );

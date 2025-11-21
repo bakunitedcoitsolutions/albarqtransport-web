@@ -1968,7 +1968,7 @@ span {
 	content: "";
 	width: 25px;
 	height: 2px;
-	background-color: var(--theme);
+	background-color: var(--theme2);
 }
 
 .footer-widgets-wrapper .single-footer-widget .widget-head h5::after {
@@ -2051,7 +2051,7 @@ span {
 }
 
 .footer-widgets-wrapper .single-footer-widget .list-area li:hover a {
-	color: var(--theme);
+	color: var(--theme2);
 }
 
 .footer-widgets-wrapper .single-footer-widget .footer-gallery .gallery-wrap .gallery-item {
@@ -6099,7 +6099,6 @@ input.main-search-input::placeholder {
 }
 
 .project-wrapper .main-box .box {
-	background-image: url(/img/project/01.jpg);
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -6175,22 +6174,6 @@ input.main-search-input::placeholder {
 
 .project-wrapper .main-box .box .project-content .icon:hover {
 	transform: rotate(0);
-}
-
-.project-wrapper .main-box .box.bg-1 {
-	background-image: url(/img/project/02.jpg);
-}
-
-.project-wrapper .main-box .box.bg-2 {
-	background-image: url(/img/project/03.jpg);
-}
-
-.project-wrapper .main-box .box.bg-3 {
-	background-image: url(/img/project/04.jpg);
-}
-
-.project-wrapper .main-box .box.bg-4 {
-	background-image: url(/img/project/05.jpg);
 }
 
 .project-wrapper .main-box .box.active {
@@ -7654,4 +7637,59 @@ input.main-search-input::placeholder {
 
 html,body {
 	scroll-behavior: smooth;
+}
+
+/* Certificate Section Hover Effect */
+.certificate-item {
+	position: relative;
+	overflow: hidden;
+	border-radius: 0.5rem;
+}
+
+.certificate-item img {
+	transition: transform 0.3s ease-in-out;
+}
+
+.certificate-item:hover img {
+	transform: scale(1.1);
+}
+
+.certificate-overlay {
+	position: absolute;
+	inset: 0;
+	background-color: rgba(0, 0, 0, 0.6);
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+	border-radius: 0.5rem;
+	z-index: 10;
+	pointer-events: none;
+}
+
+.certificate-item:hover .certificate-overlay {
+	opacity: 1;
+}
+
+.certificate-icon-wrapper {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+	z-index: 20;
+}
+
+.certificate-item:hover .certificate-icon-wrapper {
+	opacity: 1;
+}
+
+.certificate-icon-wrapper a {
+	color: white;
+	font-size: 2.25rem;
+	transition: color 0.3s ease-in-out;
+}
+
+.certificate-icon-wrapper a:hover {
+	color: var(--theme2);
 }
