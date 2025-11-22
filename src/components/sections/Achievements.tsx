@@ -1,6 +1,13 @@
+"use client";
+
+import Image from "next/image";
+import PreHeader from "../elements/PreHeader";
 import Counter1 from "./Counter1";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Achievements() {
+  const { isRTL, t } = useLanguage();
+
   return (
     <>
       <section
@@ -15,20 +22,19 @@ export default function Achievements() {
               <div className="col-xxl-6 col-xl-7 col-lg-8">
                 <div className="achievements-content">
                   <div className="section-title">
-                    <h6 className="wow fadeInUp">
-                      <i className="fa-regular fa-arrow-left-long" />
-                      ACHIEVEMENTS
-                      <i className="fa-regular fa-arrow-right-long" />
-                    </h6>
-                    <h2 className="wow fadeInUp" data-wow-delay=".2s">
-                      Let's Get Started We are <br /> now Transport a dream.
+                    <PreHeader
+                      theme="theme"
+                      text={t("achievements.preHeader")}
+                    />
+                    <h2
+                      className="wow fadeInUp rtl:text-xl! rtl:md:text-3xl! rtl:xl:text-6xl!"
+                      data-wow-delay=".2s"
+                    >
+                      {t("achievements.title")}
                     </h2>
                   </div>
-                  <p className="mt-3 mt-md-0 wow fadeInUp">
-                    It is a long established fact that a reader will be
-                    distracted the readable content of a page when looking at
-                    layout the point of using lorem the is Ipsum less Trastek
-                    normal distribution of letters.
+                  <p className="mt-3 mt-md-0 wow fadeInUp rtl:text-lg! rtl:md:text-xl! rtl:xl:text-2xl!">
+                    {t("achievements.description")}
                   </p>
                   <Counter1 />
                 </div>
@@ -38,9 +44,15 @@ export default function Achievements() {
                 data-wow-delay=".2s"
               >
                 <div className="achievements-image">
-                  <img src="/assets/img/achievements-image.jpg" alt="img" />
-                  <div className="achievements-image-2 float-bob-y">
-                    <img src="/assets/img/achievements-image-2.jpg" alt="img" />
+                  <img src="/assets/img/albarq/banner/banner-2.jpg" alt="img" />
+                  <div className="achievements-image-2 float-bob-y hidden lg:block">
+                    <Image
+                      alt="img"
+                      width={238}
+                      height={343}
+                      src="/assets/img/albarq/skills/skill-2.jpg"
+                      className="max-w-[238px] max-h-[343px]"
+                    />
                   </div>
                 </div>
               </div>

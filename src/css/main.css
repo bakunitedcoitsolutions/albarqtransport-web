@@ -3460,7 +3460,7 @@ span {
 }
 
 .breadcrumb-wrapper .page-heading .breadcrumb-items li {
-	color: var(--theme);
+	color: var(--theme2);
 	text-transform: capitalize;
 	font-weight: 500;
 	font-size: 18px;
@@ -4903,7 +4903,7 @@ span {
 }
 
 .news-box-items .news-content .author-items .link-btn {
-	color: var(--theme);
+	color: var(--theme2);
 }
 
 .news-box-items:hover,
@@ -4941,7 +4941,7 @@ span {
 
 .news-box-items:hover .news-content h4 a:hover,
 .news-box-items.active .news-content h4 a:hover {
-	color: var(--theme);
+	color: var(--theme2);
 }
 
 .news-box-items:hover .news-content .author-items,

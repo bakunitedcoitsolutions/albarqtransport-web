@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import PreHeader from "../elements/PreHeader";
 import { en as enTranslations, ar as arTranslations } from "@/locales";
+import Link from "next/link";
 
 const getSwiperOptions = (isRTL: boolean) => ({
   modules: [Autoplay, Pagination, Navigation],
@@ -127,36 +128,6 @@ export default function Testimonial1() {
                       ))}
                     </Swiper>
                   </div>
-                  {/* <div className="client-img-items">
-                    <div className="client-image-area">
-                      <div className="client-img">
-                        <img
-                          src="/assets/img/testimonial/client-1.png"
-                          alt="img"
-                        />
-                      </div>
-                      <div className="client-img">
-                        <img
-                          src="/assets/img/testimonial/client-2.png"
-                          alt="img"
-                        />
-                      </div>
-                      <div className="client-img">
-                        <img
-                          src="/assets/img/testimonial/client-3.png"
-                          alt="img"
-                        />
-                      </div>
-                    </div>
-                    <div className="array-button">
-                      <button className="array-prev h1p">
-                        <i className="fa-solid fa-arrow-left-long" />
-                      </button>
-                      <button className="array-next h1n">
-                        <i className="fa-solid fa-arrow-right-long" />
-                      </button>
-                    </div>
-                  </div> */}
                 </div>
               </div>
               <div className="col-lg-6" />

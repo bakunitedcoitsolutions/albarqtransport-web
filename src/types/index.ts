@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 export interface LayoutProps {
   headerStyle?: number | null;
   footerStyle?: number | null;
+  breadcrumbText?: string;
   breadcrumbTitle?: string;
   children: ReactNode;
 }
@@ -28,6 +29,7 @@ export interface SearchProps {
 }
 
 export interface BreadcrumbProps {
+  breadcrumbText: string;
   breadcrumbTitle: string;
 }
 

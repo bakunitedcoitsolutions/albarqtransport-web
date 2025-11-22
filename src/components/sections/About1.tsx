@@ -7,7 +7,11 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import PreHeader from "../elements/PreHeader";
 import Link from "next/link";
 
-export default function About1() {
+export default function About1({
+  showMoreButton = true,
+}: {
+  showMoreButton?: boolean;
+}) {
   const [isOpen, setOpen] = useState<boolean>(false);
   const { isRTL, t } = useLanguage();
   return (
@@ -140,18 +144,19 @@ export default function About1() {
                       </div>
                     ))}
                   </div>
-
-                  <div className="mt-4! wow fadeInUp" data-wow-delay=".6s">
-                    <Link
-                      href="/about/our-company"
-                      className="theme-btn rtl:text-lg! rtl:md:text-xl! rtl:xl:text-2xl!"
-                    >
-                      {t("about.learnMore")}{" "}
-                      <i
-                        className={`fa-regular fa-arrow-right rtl:rotate-180! rtl:mr-3!`}
-                      />
-                    </Link>
-                  </div>
+                  {showMoreButton && (
+                    <div className="mt-4! wow fadeInUp" data-wow-delay=".6s">
+                      <Link
+                        href="/about-us"
+                        className="theme-btn rtl:text-lg! rtl:md:text-xl! rtl:xl:text-2xl!"
+                      >
+                        {t("about.learnMore")}{" "}
+                        <i
+                          className={`fa-regular fa-arrow-right rtl:rotate-180! rtl:mr-3!`}
+                        />
+                      </Link>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

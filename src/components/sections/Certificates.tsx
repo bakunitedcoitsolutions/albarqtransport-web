@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import PreHeader from "../elements/PreHeader";
 
 const getSwiperOptions = (isRTL: boolean) => ({
   modules: [Autoplay, Pagination, Navigation],
@@ -122,6 +123,17 @@ export default function Certificates() {
         className="faq-section fix section-padding section-bg-2 bg-cover"
         style={{ backgroundImage: 'url("assets/img/faq/bg-shape.png")' }}
       >
+        <div className="container text-center">
+          <div className="section-title">
+            <PreHeader text={t("certificates.preHeader")} />
+            <h2
+              className="wow fadeInUp rtl:text-4xl! rtl:md:text-5xl! rtl:xl:text-6xl!"
+              data-wow-delay=".2s"
+            >
+              {t("certificates.title")}
+            </h2>
+          </div>
+        </div>
         <div className="container">
           <div className="swiper certificate-slider">
             <Swiper
@@ -147,7 +159,18 @@ export default function Certificates() {
                 </SwiperSlide>
               ))}
             </Swiper>
-            <div className="swiper-pagination"></div>
+            <div className="mt-10! flex! justify-center! items-center!">
+              <Link
+                href="/certificates"
+                className="theme-btn rtl:text-xl! rtl:md:text-2xl!"
+              >
+                {t("certificates.viewAllCertificates")}
+                <i
+                  className={`fas fa-long-arrow-right rtl:rotate-180! rtl:mr-3!`}
+                />
+              </Link>
+            </div>
+            {/* <div className="swiper-pagination"></div> */}
           </div>
         </div>
       </section>

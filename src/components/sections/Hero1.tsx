@@ -7,9 +7,9 @@ import Link from "next/link";
 
 import { useState } from "react";
 import ModalVideo from "react-modal-video";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 const getSwiperOptions = (isRTL: boolean) => ({
   modules: [Autoplay, Pagination, Navigation],
@@ -104,7 +104,7 @@ export default function Hero1(): React.ReactElement {
                 </p>
                 <div className="hero-button">
                   <Link
-                    href="/about"
+                    href="/services"
                     className="theme-btn bg-white wow fadeInUp text-sm! md:text-base! xl:text-lg! rtl:text-xl! rtl:md:text-2xl! rtl:px-3xl! rtl:md:px-5! rtl:py-4! rtl:md:py-5!"
                     data-wow-delay=".3s"
                   >

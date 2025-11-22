@@ -16,6 +16,7 @@ import Search from "./Search";
 export default function Layout({
   headerStyle,
   footerStyle,
+  breadcrumbText,
   breadcrumbTitle,
   children,
 }: LayoutProps) {
@@ -114,7 +115,12 @@ export default function Layout({
       <Search isSearch={isSearch} handleSearch={handleSearch} />
 
       <main className="main">
-        {breadcrumbTitle && <Breadcrumb breadcrumbTitle={breadcrumbTitle} />}
+        {!!breadcrumbText && (
+          <Breadcrumb
+            breadcrumbText={breadcrumbText}
+            breadcrumbTitle={breadcrumbTitle ?? ""}
+          />
+        )}
 
         {children}
       </main>

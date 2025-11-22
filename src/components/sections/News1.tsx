@@ -101,6 +101,18 @@ export default function News1() {
                     })}
                   </div>
                 </div>
+
+                <div className="mt-10! flex! justify-center! items-center!">
+                  <Link
+                    href="/news-grid"
+                    className="theme-btn rtl:text-xl! rtl:md:text-2xl!"
+                  >
+                    {t("news.viewAllNews")}
+                    <i
+                      className={`fas fa-long-arrow-right rtl:rotate-180! rtl:mr-3!`}
+                    />
+                  </Link>
+                </div>
               </>
             )}
           </div>

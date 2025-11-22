@@ -125,6 +125,18 @@ export default function Service1() {
             </Swiper>
           </div>
         </div>
+        <div className="mt-10! flex! justify-center! items-center!">
+          <Link
+            href="/services"
+            className="theme-btn bg-white wow fadeInUp cursor-pointer! flex! items-center! justify-center! text-sm! md:text-base! xl:text-lg! rtl:text-xl! rtl:md:text-2xl!"
+            data-wow-delay=".6s"
+          >
+            {t("service.viewAllServices")}
+            <i
+              className={`fa-regular fa-arrow-right rtl:rotate-180! rtl:mr-3!`}
+            />
+          </Link>
+        </div>
       </section>
     </>
   );

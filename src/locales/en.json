@@ -5,22 +5,37 @@
   "menu": {
     "home": "Home",
     "aboutUs": "About Us",
+    "aboutUsTitle": "Leading Transport Services for Construction Sites",
     "ourCompany": "Our Company",
     "ourClients": "Our Clients",
     "services": "Services",
+    "servicesTitle": "Our Professional Transport Services",
     "sand": "Sand",
+    "sandTitle": "Professional Sand Supply & Transport Services",
     "aggregate": "Aggregate",
+    "aggregateTitle": "Professional Aggregate Supply & Transport Services",
     "stone": "Stone",
+    "stoneTitle": "Professional Stone Supply & Transport Services",
     "subBase": "Sub Base",
+    "subBaseTitle": "Professional Sub Base Supply & Transport Services",
     "soil": "Soil",
+    "soilTitle": "Professional Soil Supply & Transport Services",
     "drinkingWater": "Drinking Water",
+    "drinkingWaterTitle": "Safe Drinking Water Supply & Transport Services",
     "wasteWater": "Waste Water",
+    "wasteWaterTitle": "Professional Waste Water Removal & Transport Services",
     "lowbed": "Lowbed",
+    "lowbedTitle": "Specialized Lowbed Transport Services",
     "flatbed": "Flatbed",
+    "flatbedTitle": "Professional Flatbed Transport Services",
     "wasteRemoval": "Waste Removal",
+    "wasteRemovalTitle": "Comprehensive Waste Removal Services",
     "heavyEquipmentRental": "Heavy Equipment Rental",
+    "heavyEquipmentRentalTitle": "Reliable Heavy Equipment Rental Services",
     "projects": "Projects",
     "certificates": "Certificates",
+    "news": "News",
+    "newsTitle": "Latest News & Industry Updates",
     "contactUs": "Contact Us"
   },
   "offcanvas": {
@@ -39,49 +54,270 @@
     "whatWeDo": "WHAT WE Do",
     "title": "We Offers Cost Efficient <br />Transport Shipping",
     "exploreMore": "Explore More",
+    "viewAllServices": "View All Services",
     "sand": {
       "name": "Sand",
-      "description": "Reliable supply and transport of high-quality sand for construction projects. We ensure timely delivery to construction sites across Tabuk and NEOM. Our eco-friendly practices guarantee quality service."
+      "description": "Reliable supply and transport of high-quality sand for construction projects. We ensure timely delivery to construction sites across Tabuk and NEOM. Our eco-friendly practices guarantee quality service.",
+      "details": {
+        "title": "Sand Supply & Transport Services",
+        "paragraph1": "Al-Barq Transport specializes in providing high-quality sand supply and transport services for construction projects across Tabuk and NEOM. Our extensive fleet of specialized vehicles ensures efficient and timely delivery of sand materials to your construction sites.",
+        "paragraph2": "We understand that quality sand is essential for construction projects. That's why we source only the finest sand materials and maintain strict quality control standards. Our experienced team handles every aspect of sand transport, from loading to delivery, ensuring your materials arrive in perfect condition.",
+        "benefitsTitle": "Service Benefits:",
+        "benefitsDescription1": "Our sand supply and transport services offer numerous advantages for your construction projects.",
+        "benefitsDescription2": "We provide comprehensive solutions tailored to meet your specific project requirements.",
+        "benefit1": "High-quality sand materials sourced from trusted suppliers",
+        "benefit2": "Timely delivery to keep your construction projects on schedule",
+        "benefit3": "Eco-friendly transport practices for sustainable construction",
+        "processTitle": "3 Simple Steps to Process",
+        "processDescription": "Getting sand delivered to your construction site is simple and straightforward with Al-Barq Transport. Our streamlined process ensures efficiency and reliability at every step.",
+        "step1Title": "Request Quote",
+        "step1Description": "Contact us with your sand requirements and project details. We'll provide a detailed quote based on quantity, location, and delivery timeline.",
+        "step2Title": "Schedule Delivery",
+        "step2Description": "Once approved, we schedule your sand delivery at a convenient time. Our logistics team coordinates everything for seamless execution.",
+        "step3Title": "Receive Delivery",
+        "step3Description": "Our professional team delivers the sand directly to your construction site, ensuring proper placement and quality verification.",
+        "conclusion": "With Al-Barq Transport, you can trust that your sand supply needs are in expert hands. Our commitment to quality, timely delivery, and customer satisfaction makes us the preferred choice for construction projects across Tabuk and NEOM. Contact us today to discuss your sand supply requirements."
+      }
     },
     "aggregate": {
       "name": "Aggregate",
-      "description": "Professional supply and transport of aggregate materials for construction needs. We provide various sizes and types to meet your project requirements. Trusted for timely delivery and quality service."
+      "description": "Professional supply and transport of aggregate materials for construction needs. We provide various sizes and types to meet your project requirements. Trusted for timely delivery and quality service.",
+      "details": {
+        "title": "Aggregate Supply & Transport Services",
+        "paragraph1": "Al-Barq Transport specializes in providing high-quality aggregate supply and transport services for construction projects across Tabuk and NEOM. Our extensive fleet of specialized vehicles ensures efficient and timely delivery of aggregate materials to your construction sites.",
+        "paragraph2": "We understand that quality aggregate is essential for construction projects. That's why we source only the finest aggregate materials in various sizes and types, maintaining strict quality control standards. Our experienced team handles every aspect of aggregate transport, from loading to delivery, ensuring your materials arrive in perfect condition.",
+        "benefitsTitle": "Service Benefits:",
+        "benefitsDescription1": "Our aggregate supply and transport services offer numerous advantages for your construction projects.",
+        "benefitsDescription2": "We provide comprehensive solutions tailored to meet your specific project requirements.",
+        "benefit1": "High-quality aggregate materials in various sizes and types",
+        "benefit2": "Timely delivery to keep your construction projects on schedule",
+        "benefit3": "Eco-friendly transport practices for sustainable construction",
+        "processTitle": "3 Simple Steps to Process",
+        "processDescription": "Getting aggregate delivered to your construction site is simple and straightforward with Al-Barq Transport. Our streamlined process ensures efficiency and reliability at every step.",
+        "step1Title": "Request Quote",
+        "step1Description": "Contact us with your aggregate requirements and project details. We'll provide a detailed quote based on quantity, size, type, location, and delivery timeline.",
+        "step2Title": "Schedule Delivery",
+        "step2Description": "Once approved, we schedule your aggregate delivery at a convenient time. Our logistics team coordinates everything for seamless execution.",
+        "step3Title": "Receive Delivery",
+        "step3Description": "Our professional team delivers the aggregate directly to your construction site, ensuring proper placement and quality verification.",
+        "conclusion": "With Al-Barq Transport, you can trust that your aggregate supply needs are in expert hands. Our commitment to quality, timely delivery, and customer satisfaction makes us the preferred choice for construction projects across Tabuk and NEOM. Contact us today to discuss your aggregate supply requirements."
+      }
     },
     "stone": {
       "name": "Stone",
-      "description": "Efficient supply and transport of stone materials for construction and landscaping projects. We deliver quality stones in various sizes and types. Known for reliable service across Tabuk and NEOM."
+      "description": "Efficient supply and transport of stone materials for construction and landscaping projects. We deliver quality stones in various sizes and types. Known for reliable service across Tabuk and NEOM.",
+      "details": {
+        "title": "Stone Supply & Transport Services",
+        "paragraph1": "Al-Barq Transport specializes in providing high-quality stone supply and transport services for construction and landscaping projects across Tabuk and NEOM. Our extensive fleet of specialized vehicles ensures efficient and timely delivery of stone materials to your construction sites.",
+        "paragraph2": "We understand that quality stone is essential for construction and landscaping projects. That's why we source only the finest stone materials in various sizes and types, maintaining strict quality control standards. Our experienced team handles every aspect of stone transport, from loading to delivery, ensuring your materials arrive in perfect condition.",
+        "benefitsTitle": "Service Benefits:",
+        "benefitsDescription1": "Our stone supply and transport services offer numerous advantages for your construction and landscaping projects.",
+        "benefitsDescription2": "We provide comprehensive solutions tailored to meet your specific project requirements.",
+        "benefit1": "High-quality stone materials in various sizes and types",
+        "benefit2": "Timely delivery to keep your construction projects on schedule",
+        "benefit3": "Eco-friendly transport practices for sustainable construction",
+        "processTitle": "3 Simple Steps to Process",
+        "processDescription": "Getting stone delivered to your construction site is simple and straightforward with Al-Barq Transport. Our streamlined process ensures efficiency and reliability at every step.",
+        "step1Title": "Request Quote",
+        "step1Description": "Contact us with your stone requirements and project details. We'll provide a detailed quote based on quantity, size, type, location, and delivery timeline.",
+        "step2Title": "Schedule Delivery",
+        "step2Description": "Once approved, we schedule your stone delivery at a convenient time. Our logistics team coordinates everything for seamless execution.",
+        "step3Title": "Receive Delivery",
+        "step3Description": "Our professional team delivers the stone directly to your construction site, ensuring proper placement and quality verification.",
+        "conclusion": "With Al-Barq Transport, you can trust that your stone supply needs are in expert hands. Our commitment to quality, timely delivery, and customer satisfaction makes us the preferred choice for construction and landscaping projects across Tabuk and NEOM. Contact us today to discuss your stone supply requirements."
+      }
     },
     "subBase": {
       "name": "Sub Base",
-      "description": "Expert supply and transport of sub-base materials for road construction and infrastructure projects. We ensure proper grading and quality materials. Delivered on time to your construction site."
+      "description": "Expert supply and transport of sub-base materials for road construction and infrastructure projects. We ensure proper grading and quality materials. Delivered on time to your construction site.",
+      "details": {
+        "title": "Sub Base Supply & Transport Services",
+        "paragraph1": "Al-Barq Transport specializes in providing high-quality sub-base supply and transport services for road construction and infrastructure projects across Tabuk and NEOM. Our extensive fleet of specialized vehicles ensures efficient and timely delivery of sub-base materials to your construction sites.",
+        "paragraph2": "We understand that quality sub-base materials are essential for road construction and infrastructure projects. That's why we source only the finest sub-base materials with proper grading, maintaining strict quality control standards. Our experienced team handles every aspect of sub-base transport, from loading to delivery, ensuring your materials arrive in perfect condition.",
+        "benefitsTitle": "Service Benefits:",
+        "benefitsDescription1": "Our sub-base supply and transport services offer numerous advantages for your road construction and infrastructure projects.",
+        "benefitsDescription2": "We provide comprehensive solutions tailored to meet your specific project requirements.",
+        "benefit1": "High-quality sub-base materials with proper grading",
+        "benefit2": "Timely delivery to keep your construction projects on schedule",
+        "benefit3": "Eco-friendly transport practices for sustainable construction",
+        "processTitle": "3 Simple Steps to Process",
+        "processDescription": "Getting sub-base delivered to your construction site is simple and straightforward with Al-Barq Transport. Our streamlined process ensures efficiency and reliability at every step.",
+        "step1Title": "Request Quote",
+        "step1Description": "Contact us with your sub-base requirements and project details. We'll provide a detailed quote based on quantity, grading specifications, location, and delivery timeline.",
+        "step2Title": "Schedule Delivery",
+        "step2Description": "Once approved, we schedule your sub-base delivery at a convenient time. Our logistics team coordinates everything for seamless execution.",
+        "step3Title": "Receive Delivery",
+        "step3Description": "Our professional team delivers the sub-base directly to your construction site, ensuring proper placement and quality verification.",
+        "conclusion": "With Al-Barq Transport, you can trust that your sub-base supply needs are in expert hands. Our commitment to quality, timely delivery, and customer satisfaction makes us the preferred choice for road construction and infrastructure projects across Tabuk and NEOM. Contact us today to discuss your sub-base supply requirements."
+      }
     },
     "soil": {
       "name": "Soil",
-      "description": "Reliable supply and transport of soil for construction, landscaping, and agricultural projects. We provide various soil types to meet your specific needs. Quality service with eco-friendly practices."
+      "description": "Reliable supply and transport of soil for construction, landscaping, and agricultural projects. We provide various soil types to meet your specific needs. Quality service with eco-friendly practices.",
+      "details": {
+        "title": "Soil Supply & Transport Services",
+        "paragraph1": "Al-Barq Transport specializes in providing high-quality soil supply and transport services for construction, landscaping, and agricultural projects across Tabuk and NEOM. Our extensive fleet of specialized vehicles ensures efficient and timely delivery of soil materials to your project sites.",
+        "paragraph2": "We understand that quality soil is essential for construction, landscaping, and agricultural projects. That's why we source only the finest soil materials in various types, maintaining strict quality control standards. Our experienced team handles every aspect of soil transport, from loading to delivery, ensuring your materials arrive in perfect condition.",
+        "benefitsTitle": "Service Benefits:",
+        "benefitsDescription1": "Our soil supply and transport services offer numerous advantages for your construction, landscaping, and agricultural projects.",
+        "benefitsDescription2": "We provide comprehensive solutions tailored to meet your specific project requirements.",
+        "benefit1": "High-quality soil materials in various types for different applications",
+        "benefit2": "Timely delivery to keep your projects on schedule",
+        "benefit3": "Eco-friendly transport practices for sustainable projects",
+        "processTitle": "3 Simple Steps to Process",
+        "processDescription": "Getting soil delivered to your project site is simple and straightforward with Al-Barq Transport. Our streamlined process ensures efficiency and reliability at every step.",
+        "step1Title": "Request Quote",
+        "step1Description": "Contact us with your soil requirements and project details. We'll provide a detailed quote based on quantity, soil type, location, and delivery timeline.",
+        "step2Title": "Schedule Delivery",
+        "step2Description": "Once approved, we schedule your soil delivery at a convenient time. Our logistics team coordinates everything for seamless execution.",
+        "step3Title": "Receive Delivery",
+        "step3Description": "Our professional team delivers the soil directly to your project site, ensuring proper placement and quality verification.",
+        "conclusion": "With Al-Barq Transport, you can trust that your soil supply needs are in expert hands. Our commitment to quality, timely delivery, and customer satisfaction makes us the preferred choice for construction, landscaping, and agricultural projects across Tabuk and NEOM. Contact us today to discuss your soil supply requirements."
+      }
     },
     "drinkingWater": {
       "name": "Drinking Water",
-      "description": "Safe and reliable supply and transport of drinking water for construction sites and facilities. We ensure water quality meets health standards. Timely delivery across Tabuk and NEOM regions."
+      "description": "Safe and reliable supply and transport of drinking water for construction sites and facilities. We ensure water quality meets health standards. Timely delivery across Tabuk and NEOM regions.",
+      "details": {
+        "title": "Safe Drinking Water Supply & Transport Services",
+        "paragraph1": "Al-Barq Transport specializes in providing safe and reliable drinking water supply and transport services for construction sites and facilities across Tabuk and NEOM. Our specialized water tanker fleet ensures efficient and timely delivery of high-quality drinking water to your project sites.",
+        "paragraph2": "We understand that access to safe drinking water is essential for construction sites and facilities. That's why we maintain strict quality control standards and ensure all water meets health standards. Our experienced team handles every aspect of water transport, from sourcing to delivery, ensuring your water arrives in perfect condition.",
+        "benefitsTitle": "Service Benefits:",
+        "benefitsDescription1": "Our drinking water supply and transport services offer numerous advantages for your construction sites and facilities.",
+        "benefitsDescription2": "We provide comprehensive solutions tailored to meet your specific project requirements.",
+        "benefit1": "Safe drinking water that meets health standards",
+        "benefit2": "Timely delivery to keep your construction projects on schedule",
+        "benefit3": "Eco-friendly transport practices for sustainable operations",
+        "processTitle": "3 Simple Steps to Process",
+        "processDescription": "Getting drinking water delivered to your construction site is simple and straightforward with Al-Barq Transport. Our streamlined process ensures efficiency and reliability at every step.",
+        "step1Title": "Request Quote",
+        "step1Description": "Contact us with your drinking water requirements and project details. We'll provide a detailed quote based on quantity, location, and delivery timeline.",
+        "step2Title": "Schedule Delivery",
+        "step2Description": "Once approved, we schedule your drinking water delivery at a convenient time. Our logistics team coordinates everything for seamless execution.",
+        "step3Title": "Receive Delivery",
+        "step3Description": "Our professional team delivers the drinking water directly to your construction site, ensuring proper handling and quality verification.",
+        "conclusion": "With Al-Barq Transport, you can trust that your drinking water supply needs are in expert hands. Our commitment to safety, quality, timely delivery, and customer satisfaction makes us the preferred choice for construction sites and facilities across Tabuk and NEOM. Contact us today to discuss your drinking water supply requirements."
+      }
     },
     "wasteWater": {
       "name": "Waste Water",
-      "description": "Professional removal and transport of waste water from construction sites. We handle waste water management with eco-friendly practices. Trusted name in waste management services."
+      "description": "Professional removal and transport of waste water from construction sites. We handle waste water management with eco-friendly practices. Trusted name in waste management services.",
+      "details": {
+        "title": "Professional Waste Water Removal & Transport Services",
+        "paragraph1": "Al-Barq Transport specializes in providing professional waste water removal and transport services for construction sites across Tabuk and NEOM. Our specialized fleet of waste water tankers ensures efficient and timely removal and transport of waste water from your construction sites.",
+        "paragraph2": "We understand that proper waste water management is essential for construction sites. That's why we maintain strict environmental standards and ensure all waste water is handled responsibly. Our experienced team handles every aspect of waste water removal and transport, from collection to disposal, ensuring compliance with environmental regulations.",
+        "benefitsTitle": "Service Benefits:",
+        "benefitsDescription1": "Our waste water removal and transport services offer numerous advantages for your construction sites.",
+        "benefitsDescription2": "We provide comprehensive solutions tailored to meet your specific project requirements.",
+        "benefit1": "Professional waste water removal with eco-friendly practices",
+        "benefit2": "Timely service to keep your construction sites clean and compliant",
+        "benefit3": "Compliance with environmental regulations and standards",
+        "processTitle": "3 Simple Steps to Process",
+        "processDescription": "Getting waste water removed from your construction site is simple and straightforward with Al-Barq Transport. Our streamlined process ensures efficiency and reliability at every step.",
+        "step1Title": "Request Service",
+        "step1Description": "Contact us with your waste water removal requirements and project details. We'll provide a detailed quote based on volume, location, and service frequency.",
+        "step2Title": "Schedule Removal",
+        "step2Description": "Once approved, we schedule your waste water removal at a convenient time. Our logistics team coordinates everything for seamless execution.",
+        "step3Title": "Complete Removal",
+        "step3Description": "Our professional team removes and transports the waste water from your construction site, ensuring proper handling and disposal in compliance with regulations.",
+        "conclusion": "With Al-Barq Transport, you can trust that your waste water management needs are in expert hands. Our commitment to environmental responsibility, timely service, and customer satisfaction makes us the preferred choice for construction sites across Tabuk and NEOM. Contact us today to discuss your waste water removal requirements."
+      }
     },
     "lowbed": {
       "name": "Lowbed Services",
-      "description": "Specialized lowbed transport services for heavy machinery and oversized equipment. We safely transport construction equipment to and from sites. Reliable service for your heavy transport needs."
+      "description": "Specialized lowbed transport services for heavy machinery and oversized equipment. We safely transport construction equipment to and from sites. Reliable service for your heavy transport needs.",
+      "details": {
+        "title": "Specialized Lowbed Transport Services",
+        "paragraph1": "Al-Barq Transport specializes in providing specialized lowbed transport services for heavy machinery and oversized equipment across Tabuk and NEOM. Our extensive fleet of lowbed trailers ensures safe and efficient transport of construction equipment to and from your project sites.",
+        "paragraph2": "We understand that transporting heavy machinery and oversized equipment requires specialized expertise and equipment. That's why we maintain a modern fleet of lowbed trailers and employ experienced drivers trained in heavy equipment transport. Our team handles every aspect of the transport process, from loading to delivery, ensuring your equipment arrives safely and on time.",
+        "benefitsTitle": "Service Benefits:",
+        "benefitsDescription1": "Our lowbed transport services offer numerous advantages for your heavy equipment transport needs.",
+        "benefitsDescription2": "We provide comprehensive solutions tailored to meet your specific project requirements.",
+        "benefit1": "Specialized lowbed trailers for heavy machinery and oversized equipment",
+        "benefit2": "Safe and timely transport to keep your projects on schedule",
+        "benefit3": "Experienced drivers trained in heavy equipment transport",
+        "processTitle": "3 Simple Steps to Process",
+        "processDescription": "Getting your heavy equipment transported is simple and straightforward with Al-Barq Transport. Our streamlined process ensures efficiency and reliability at every step.",
+        "step1Title": "Request Quote",
+        "step1Description": "Contact us with your equipment details and transport requirements. We'll provide a detailed quote based on equipment size, weight, location, and delivery timeline.",
+        "step2Title": "Schedule Transport",
+        "step2Description": "Once approved, we schedule your equipment transport at a convenient time. Our logistics team coordinates everything for seamless execution.",
+        "step3Title": "Complete Delivery",
+        "step3Description": "Our professional team safely transports your equipment to the destination, ensuring proper handling and secure delivery.",
+        "conclusion": "With Al-Barq Transport, you can trust that your heavy equipment transport needs are in expert hands. Our commitment to safety, timely delivery, and customer satisfaction makes us the preferred choice for lowbed transport services across Tabuk and NEOM. Contact us today to discuss your heavy equipment transport requirements."
+      }
     },
     "flatbed": {
       "name": "Flatbed Services",
-      "description": "Professional flatbed transport services for construction materials and equipment. We handle various cargo sizes with care and efficiency. Timely delivery to construction sites across the region."
+      "description": "Professional flatbed transport services for construction materials and equipment. We handle various cargo sizes with care and efficiency. Timely delivery to construction sites across the region.",
+      "details": {
+        "title": "Professional Flatbed Transport Services",
+        "paragraph1": "Al-Barq Transport specializes in providing professional flatbed transport services for construction materials and equipment across Tabuk and NEOM. Our extensive fleet of flatbed trucks ensures safe and efficient transport of various cargo sizes to your project sites.",
+        "paragraph2": "We understand that transporting construction materials and equipment requires careful handling and expertise. That's why we maintain a modern fleet of flatbed trucks and employ experienced drivers trained in cargo transport. Our team handles every aspect of the transport process, from loading to delivery, ensuring your materials and equipment arrive safely and on time.",
+        "benefitsTitle": "Service Benefits:",
+        "benefitsDescription1": "Our flatbed transport services offer numerous advantages for your construction material and equipment transport needs.",
+        "benefitsDescription2": "We provide comprehensive solutions tailored to meet your specific project requirements.",
+        "benefit1": "Professional flatbed trucks for various cargo sizes",
+        "benefit2": "Safe and timely transport to keep your projects on schedule",
+        "benefit3": "Experienced drivers trained in cargo handling and transport",
+        "processTitle": "3 Simple Steps to Process",
+        "processDescription": "Getting your construction materials and equipment transported is simple and straightforward with Al-Barq Transport. Our streamlined process ensures efficiency and reliability at every step.",
+        "step1Title": "Request Quote",
+        "step1Description": "Contact us with your cargo details and transport requirements. We'll provide a detailed quote based on cargo size, weight, location, and delivery timeline.",
+        "step2Title": "Schedule Transport",
+        "step2Description": "Once approved, we schedule your cargo transport at a convenient time. Our logistics team coordinates everything for seamless execution.",
+        "step3Title": "Complete Delivery",
+        "step3Description": "Our professional team safely transports your cargo to the destination, ensuring proper handling and secure delivery.",
+        "conclusion": "With Al-Barq Transport, you can trust that your flatbed transport needs are in expert hands. Our commitment to safety, timely delivery, and customer satisfaction makes us the preferred choice for flatbed transport services across Tabuk and NEOM. Contact us today to discuss your transport requirements."
+      }
     },
     "wasteRemoval": {
       "name": "Waste Removal",
-      "description": "Comprehensive waste removal services for construction sites. We handle construction debris and waste materials responsibly. Eco-friendly practices ensure proper waste management and disposal."
+      "description": "Comprehensive waste removal services for construction sites. We handle construction debris and waste materials responsibly. Eco-friendly practices ensure proper waste management and disposal.",
+      "details": {
+        "title": "Comprehensive Waste Removal Services",
+        "paragraph1": "Al-Barq Transport specializes in providing comprehensive waste removal services for construction sites across Tabuk and NEOM. Our professional waste management team ensures responsible handling and disposal of construction debris and waste materials.",
+        "paragraph2": "We understand that proper waste management is crucial for maintaining clean and safe construction sites. That's why we maintain a modern fleet of waste removal vehicles and employ experienced teams trained in eco-friendly waste disposal practices. Our team handles every aspect of the waste removal process, from collection to proper disposal, ensuring your construction site remains clean and compliant with environmental regulations.",
+        "benefitsTitle": "Service Benefits:",
+        "benefitsDescription1": "Our waste removal services offer numerous advantages for your construction site waste management needs.",
+        "benefitsDescription2": "We provide comprehensive solutions tailored to meet your specific project requirements.",
+        "benefit1": "Comprehensive waste removal for construction debris and materials",
+        "benefit2": "Eco-friendly practices ensuring proper waste management and disposal",
+        "benefit3": "Experienced teams trained in responsible waste handling",
+        "processTitle": "3 Simple Steps to Process",
+        "processDescription": "Getting your construction waste removed is simple and straightforward with Al-Barq Transport. Our streamlined process ensures efficiency and reliability at every step.",
+        "step1Title": "Request Service",
+        "step1Description": "Contact us with your waste removal requirements. We'll provide a detailed quote based on waste type, volume, location, and disposal timeline.",
+        "step2Title": "Schedule Collection",
+        "step2Description": "Once approved, we schedule your waste collection at a convenient time. Our logistics team coordinates everything for seamless execution.",
+        "step3Title": "Complete Disposal",
+        "step3Description": "Our professional team collects and properly disposes of your waste, ensuring compliance with environmental regulations and eco-friendly practices.",
+        "conclusion": "With Al-Barq Transport, you can trust that your waste removal needs are handled responsibly. Our commitment to eco-friendly practices, timely service, and customer satisfaction makes us the preferred choice for waste removal services across Tabuk and NEOM. Contact us today to discuss your waste management requirements."
+      }
     },
     "heavyEquipmentRental": {
       "name": "Heavy Equipment Rental",
-      "description": "Reliable heavy equipment rental services for construction projects. We provide well-maintained construction machinery and equipment. Quality service with flexible rental terms to meet your project needs."
+      "description": "Reliable heavy equipment rental services for construction projects. We provide well-maintained construction machinery and equipment. Quality service with flexible rental terms to meet your project needs.",
+      "details": {
+        "title": "Reliable Heavy Equipment Rental Services",
+        "paragraph1": "Al-Barq Transport specializes in providing reliable heavy equipment rental services for construction projects across Tabuk and NEOM. Our extensive fleet of well-maintained construction machinery and equipment ensures you have access to the tools you need for your projects.",
+        "paragraph2": "We understand that construction projects require reliable and well-maintained equipment. That's why we maintain a modern fleet of heavy equipment and provide flexible rental terms to meet your specific project needs. Our team handles every aspect of the rental process, from equipment selection to delivery and pickup, ensuring your projects run smoothly and efficiently.",
+        "benefitsTitle": "Service Benefits:",
+        "benefitsDescription1": "Our heavy equipment rental services offer numerous advantages for your construction project needs.",
+        "benefitsDescription2": "We provide comprehensive solutions tailored to meet your specific project requirements.",
+        "benefit1": "Well-maintained construction machinery and equipment",
+        "benefit2": "Flexible rental terms to meet your project timeline",
+        "benefit3": "Reliable service with professional equipment delivery and pickup",
+        "processTitle": "3 Simple Steps to Process",
+        "processDescription": "Renting heavy equipment for your construction project is simple and straightforward with Al-Barq Transport. Our streamlined process ensures efficiency and reliability at every step.",
+        "step1Title": "Request Equipment",
+        "step1Description": "Contact us with your equipment requirements and project timeline. We'll provide a detailed quote based on equipment type, rental duration, and delivery location.",
+        "step2Title": "Schedule Delivery",
+        "step2Description": "Once approved, we schedule equipment delivery at a convenient time. Our logistics team coordinates everything for seamless execution.",
+        "step3Title": "Complete Rental",
+        "step3Description": "Our professional team delivers and picks up equipment as needed, ensuring proper handling and maintenance throughout the rental period.",
+        "conclusion": "With Al-Barq Transport, you can trust that your heavy equipment rental needs are in expert hands. Our commitment to reliability, quality equipment, and customer satisfaction makes us the preferred choice for heavy equipment rental services across Tabuk and NEOM. Contact us today to discuss your equipment rental requirements."
+      }
     }
   },
   "cta": {
@@ -207,12 +443,18 @@
       "sendMessage": "Send message"
     }
   },
+  "serviceSidebar": {
+    "services": "Services",
+    "needHelp": "Do You Need Help? We're Here to Support You",
+    "contactUsNow": "Contact us now"
+  },
   "news": {
     "preHeader": "Blog & News",
     "title": "Latest News & Blog",
     "byAdmin": "By Admin",
     "category": "Construction",
     "readMore": "Read More",
+    "viewAllNews": "View All News",
     "items": [
       {
         "title": "Inside Saudi Arabia's construction surge: three key takeaways",
@@ -249,5 +491,21 @@
     "keyPoint5": "Timely Delivery Guarantee",
     "keyPoint6": "Eco-Friendly Practices",
     "learnMore": "Learn More"
+  },
+  "certificates": {
+    "preHeader": "our certificates",
+    "title": "Our Certificates & Licenses",
+    "viewAllCertificates": "View All Certificates"
+  },
+  "achievements": {
+    "preHeader": "ACHIEVEMENTS",
+    "title": "Building Excellence We are now Transporting Your Dreams",
+    "description": "With over 20 years of experience since 2004, Al-Barq Transport has established itself as a trusted leader in construction site transport services across Tabuk and NEOM. Our commitment to excellence, timely delivery, and eco-friendly practices has made us the preferred choice for major construction projects. We take pride in our track record of successful deliveries and satisfied clients.",
+    "counter": {
+      "established": "Established",
+      "yearsExperience": "Years Experience",
+      "projects": "Projects",
+      "commitment": "Commitment"
+    }
   }
 }
