@@ -146,7 +146,7 @@ export default function Footer1() {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/about/our-company">
+                      <Link href="/about-us">
                         <i
                           className={`fa-solid fa-chevrons-right rtl:rotate-180! rtl:ml-2! rtl:text-base!`}
                         />
@@ -166,17 +166,17 @@ export default function Footer1() {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/projects">
+                      <Link href="/our-clients">
                         <i
                           className={`fa-solid fa-chevrons-right rtl:rotate-180! rtl:ml-2! rtl:text-base!`}
                         />
                         <span className="rtl:text-lg! rtl:md:text-xl! rtl:lg:text-2xl!">
-                          {t("menu.projects")}
+                          {t("menu.ourClients")}
                         </span>
                       </Link>
                     </li>
                     <li>
-                      <Link href="/certificates">
+                      <Link href="/certifications">
                         <i
                           className={`fa-solid fa-chevrons-right rtl:rotate-180! rtl:ml-2!`}
                         />

@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect } from "react";
-import { useLanguage } from "@/contexts/LanguageContext";
 import PreHeader from "../elements/PreHeader";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { en as enTranslations, ar as arTranslations } from "@/locales";
 
 export default function Equipment() {
-  const { isRTL, t, language } = useLanguage();
+  const { t, language } = useLanguage();
   const translations = language === "ar" ? arTranslations : enTranslations;
   const equipment = ((translations as any).equipment?.items || []) as Array<{
     name: string;
@@ -40,9 +40,9 @@ export default function Equipment() {
   }, []);
 
   const equipmentImages = [
-    "/assets/img/albarq/equipment/dump-truck.jpg",
-    "/assets/img/albarq/equipment/water-tanker.jpg",
-    "/assets/img/albarq/equipment/low-bed.jpg",
+    "/assets/img/albarq/equipment/eq-2.jpeg",
+    "/assets/img/albarq/equipment/eq-3.jpeg",
+    "/assets/img/albarq/equipment/eq-1.jpeg",
     "/assets/img/albarq/equipment/flat-bed.jpg",
     "/assets/img/albarq/equipment/excavator.jpg",
   ];

@@ -53,7 +53,7 @@ export default function NewsList() {
                       </li>
                     </ul>
                     <h3>
-                      <Link href="/news-details">
+                      <Link href="/news/1">
                         Attentive was bern in 2015 hel p sales teams
                       </Link>
                     </h3>
@@ -66,7 +66,7 @@ export default function NewsList() {
                       there isn't anything embarrassing
                     </p>
                     <div className="news-button">
-                      <Link href="/news-details" className="theme-btn mt-4">
+                      <Link href="/news/1" className="theme-btn mt-4">
                         read more <i className="fa-regular fa-arrow-right" />
                       </Link>
                     </div>
@@ -116,7 +116,7 @@ export default function NewsList() {
                       </li>
                     </ul>
                     <h3>
-                      <Link href="/news-details">
+                      <Link href="/news/1">
                         Rules for Security on Construction Sites
                       </Link>
                     </h3>
@@ -129,7 +129,7 @@ export default function NewsList() {
                       there isn't anything embarrassing
                     </p>
                     <div className="news-button">
-                      <Link href="/news-details" className="theme-btn mt-4">
+                      <Link href="/news/1" className="theme-btn mt-4">
                         read more <i className="fa-regular fa-arrow-right" />
                       </Link>
                     </div>
@@ -163,7 +163,7 @@ export default function NewsList() {
                       </li>
                     </ul>
                     <h3>
-                      <Link href="/news-details">
+                      <Link href="/news/1">
                         Norms for Security on Construction Sites
                       </Link>
                     </h3>
@@ -176,7 +176,7 @@ export default function NewsList() {
                       there isn't anything embarrassing
                     </p>
                     <div className="news-button">
-                      <Link href="/news-details" className="theme-btn mt-4">
+                      <Link href="/news/1" className="theme-btn mt-4">
                         read more <i className="fa-regular fa-arrow-right" />
                       </Link>
                     </div>
@@ -238,23 +238,23 @@ export default function NewsList() {
                   <div className="news-widget-categories">
                     <ul>
                       <li>
-                        <Link href="/news-details">Cargo Insurance </Link>{" "}
+                        <Link href="/news/1">Cargo Insurance </Link>{" "}
                         <span>5</span>
                       </li>
                       <li>
-                        <Link href="/news-details">Logistic Strategy</Link>{" "}
+                        <Link href="/news/1">Logistic Strategy</Link>{" "}
                         <span>3</span>
                       </li>
                       <li className="active">
-                        <Link href="/news-details">Our Delivery </Link>
+                        <Link href="/news/1">Our Delivery </Link>
                         <span>4</span>
                       </li>
                       <li>
-                        <Link href="/news-details">Shipment Solutions </Link>{" "}
+                        <Link href="/news/1">Shipment Solutions </Link>{" "}
                         <span>2</span>
                       </li>
                       <li>
-                        <Link href="/news-details">Security System</Link>{" "}
+                        <Link href="/news/1">Security System</Link>{" "}
                         <span>3</span>
                       </li>
                     </ul>
@@ -277,7 +277,7 @@ export default function NewsList() {
                           </li>
                         </ul>
                         <h6>
-                          <Link href="/news-details">
+                          <Link href="/news/1">
                             Investing in Freight Broker Training
                           </Link>
                         </h6>
@@ -295,7 +295,7 @@ export default function NewsList() {
                           </li>
                         </ul>
                         <h6>
-                          <Link href="/news-details">
+                          <Link href="/news/1">
                             Ways to Improve Your Last-Mile Strategy
                           </Link>
                         </h6>
@@ -313,7 +313,7 @@ export default function NewsList() {
                           </li>
                         </ul>
                         <h6>
-                          <Link href="/news-details">
+                          <Link href="/news/1">
                             How to Recruit and Retain Drivers
                           </Link>
                         </h6>
@@ -327,12 +327,12 @@ export default function NewsList() {
                   </div>
                   <div className="news-widget-categories">
                     <div className="tagcloud">
-                      <Link href="/news-details">transport</Link>
-                      <Link href="/news-details">cargo</Link>
-                      <Link href="/news-details">engineering</Link>
-                      <Link href="/news-details">Design</Link>
-                      <Link href="/news-details">engineering</Link>
-                      <Link href="/news-details">delivery</Link>
+                      <Link href="/news/1">transport</Link>
+                      <Link href="/news/1">cargo</Link>
+                      <Link href="/news/1">engineering</Link>
+                      <Link href="/news/1">Design</Link>
+                      <Link href="/news/1">engineering</Link>
+                      <Link href="/news/1">delivery</Link>
                     </div>
                   </div>
                 </div>

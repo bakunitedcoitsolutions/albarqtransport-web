@@ -28,7 +28,7 @@ const getMenuLinks = (t: (key: string) => string) => [
     name: t("menu.ourClients"),
   },
   {
-    href: "/certificates",
+    href: "/certifications",
     name: t("menu.certificates"),
   },
   {
@@ -73,15 +73,15 @@ export default function MobileMenu() {
                     >
                       {link.name}
                       {hasSubmenu && <i className="fa-regular fa-plus" />}
-                </Link>
+                    </Link>
                     {hasSubmenu && accordionKey !== null && (
                       <>
-                <ul
-                  className="submenu"
+                        <ul
+                          className="submenu"
                           style={{
                             display: isOpen ? "block" : "none",
                           }}
-                >
+                        >
                           {link.submenu?.map((sublink) => (
                             <li key={sublink.href}>
                               <Link
@@ -90,18 +90,18 @@ export default function MobileMenu() {
                               >
                                 {sublink.name}
                               </Link>
-                  </li>
+                            </li>
                           ))}
-                </ul>
-                <a
-                  className="mean-expand"
+                        </ul>
+                        <a
+                          className="mean-expand"
                           onClick={() => handleAccordion(accordionKey!)}
-                  style={{ fontSize: 18 }}
-                >
+                          style={{ fontSize: 18 }}
+                        >
                           {isOpen ? (
                             <i className="fa-regular fa-minus" />
                           ) : (
-                  <i className="fa-regular fa-plus" />
+                            <i className="fa-regular fa-plus" />
                           )}
                         </a>
                       </>

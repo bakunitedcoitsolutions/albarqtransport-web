@@ -31,7 +31,7 @@ export default function News2() {
               </h2>
             </div>
             <Link
-              href="/news-grid"
+              href="/news"
               className="theme-btn wow fadeInUp"
               data-wow-delay=".5s"
             >
@@ -59,7 +59,7 @@ export default function News2() {
                     <li>07 July 2024</li>
                   </ul>
                   <h4>
-                    <Link href="/news-details">
+                    <Link href="/news/1">
                       Latest Work Was Disapproved by the Supervisor.
                     </Link>
                   </h4>
@@ -71,7 +71,7 @@ export default function News2() {
                         <p>Guy Hawkins</p>
                       </div>
                     </div>
-                    <Link href="/news-details" className="link-btn">
+                    <Link href="/news/1" className="link-btn">
                       Read More <i className="fa-solid fa-arrow-right" />
                     </Link>
                   </div>
@@ -98,7 +98,7 @@ export default function News2() {
                     <li>07 July 2024</li>
                   </ul>
                   <h4>
-                    <Link href="/news-details">
+                    <Link href="/news/1">
                       Manager Disapproved of the Most Recent Work.
                     </Link>
                   </h4>
@@ -110,7 +110,7 @@ export default function News2() {
                         <p>Guy Hawkins</p>
                       </div>
                     </div>
-                    <Link href="/news-details" className="link-btn">
+                    <Link href="/news/1" className="link-btn">
                       Read More <i className="fa-solid fa-arrow-right" />
                     </Link>
                   </div>
@@ -137,7 +137,7 @@ export default function News2() {
                     <li>07 July 2024</li>
                   </ul>
                   <h4>
-                    <Link href="/news-details">
+                    <Link href="/news/1">
                       Manager Found Latest Work Unsatisfactory.
                     </Link>
                   </h4>
@@ -149,7 +149,7 @@ export default function News2() {
                         <p>Guy Hawkins</p>
                       </div>
                     </div>
-                    <Link href="/news-details" className="link-btn">
+                    <Link href="/news/1" className="link-btn">
                       Read More <i className="fa-solid fa-arrow-right" />
                     </Link>
                   </div>

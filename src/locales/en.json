@@ -8,6 +8,7 @@
     "aboutUsTitle": "Leading Transport Services for Construction Sites",
     "ourCompany": "Our Company",
     "ourClients": "Our Clients",
+    "ourClientsTitle": "Our Trusted Clients & Business Partners",
     "services": "Services",
     "servicesTitle": "Our Professional Transport Services",
     "sand": "Sand",
@@ -34,9 +35,12 @@
     "heavyEquipmentRentalTitle": "Reliable Heavy Equipment Rental Services",
     "projects": "Projects",
     "certificates": "Certificates",
+    "certifications": "Certifications",
+    "certificationsTitle": "Our Certificates & Licenses",
     "news": "News",
     "newsTitle": "Latest News & Industry Updates",
-    "contactUs": "Contact Us"
+    "contactUs": "Contact Us",
+    "contactUsTitle": "Get in Touch with Us"
   },
   "offcanvas": {
     "contactInfo": "Contact Info",
@@ -441,6 +445,41 @@
       "subject": "Subject",
       "message": "Write message . .",
       "sendMessage": "Send message"
+    },
+    "contactInfo": "Contact Info",
+    "contactUsHeader": "CONTACT US",
+    "contactInformation": "Our Contact Information",
+    "address": "Address",
+    "ourAddress": "Our Address",
+    "phone": "Mobile",
+    "email": "Email",
+    "emailAddress": "Email Address",
+    "letsGetInTouch": "Send Us a Message",
+    "formTitle": "Get In Touch",
+    "formDescription": "Your email address will not be published. Required fields are marked *",
+    "sending": "Sending...",
+    "sendMessageNow": "SEND MESSAGE NOW",
+    "sendFailed": "Failed to send message. Please try again.",
+    "namePlaceholder": "Your Name*",
+    "emailPlaceholder": "Your Email*",
+    "phonePlaceholder": "Mobile",
+    "subjectPlaceholder": "Subject*",
+    "messagePlaceholder": "Write Message*",
+    "sendMessage": "SEND MESSAGE",
+    "successTitle": "Success!",
+    "successMessage": "Your message has been sent successfully. We will get back to you soon!",
+    "errorTitle": "Error!",
+    "errorMessage": "Something went wrong. Please try again later.",
+    "validation": {
+      "nameMin": "Name must be at least 2 characters",
+      "nameMax": "Name must be less than 100 characters",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "phoneMin": "Phone number must be at least 10 characters",
+      "subjectMin": "Subject must be at least 3 characters",
+      "subjectMax": "Subject must be less than 200 characters",
+      "messageMin": "Message must be at least 10 characters",
+      "messageMax": "Message must be less than 1000 characters"
     }
   },
   "serviceSidebar": {
@@ -454,13 +493,41 @@
     "byAdmin": "By Admin",
     "category": "Construction",
     "readMore": "Read More",
+    "breadcrumbText":"News",
     "viewAllNews": "View All News",
+    "newsTitle": "Inside Saudi Arabia's construction surge: three key takeaways",
     "items": [
       {
         "title": "Inside Saudi Arabia's construction surge: three key takeaways",
         "description": "As a shorthand, everything you need to know about the Saudi Arabian construction industry can be gleaned from the drive from the airport to the capital, Riyadh. Along the route – a distance of around 35km (21 miles) – even the most unobservant of people will be struck by the sheer amount of construction work taking place."
       }
-    ]
+    ],
+    "details": {
+      "title": "Guidelines for Construction Site Security",
+      "paragraph1": "Construction site security is crucial for protecting valuable equipment, materials, and ensuring worker safety. Al-Barq Transport understands the importance of secure construction sites and implements comprehensive security measures in all our transport operations. We work closely with construction project managers to ensure that all materials and equipment are delivered safely and securely to construction sites across Tabuk and NEOM.",
+      "paragraph2": "Effective construction site security involves multiple layers of protection, including physical barriers, surveillance systems, and access control measures. Our transport services are designed to support these security protocols by ensuring timely and secure delivery of materials, reducing the time that valuable resources are left unattended on site.",
+      "paragraph3": "We maintain strict protocols for material handling and delivery to minimize security risks. Our experienced drivers and logistics team are trained to follow security best practices, ensuring that all deliveries are made to authorized personnel and that proper documentation is maintained throughout the transport process.",
+      "highlightText": "Security is not just about protecting assets—it's about creating a safe environment where construction projects can proceed without interruption. At Al-Barq Transport, we integrate security considerations into every aspect of our transport operations, from route planning to final delivery.",
+      "paragraph4": "Our commitment to construction site security extends beyond just transport services. We understand that delays in material delivery can create security vulnerabilities, which is why we prioritize timely delivery and maintain reliable schedules. Our eco-friendly transport practices also contribute to site security by reducing environmental risks that could lead to site closures or delays.",
+      "paragraph5": "Working with Al-Barq Transport means partnering with a company that takes construction site security seriously. We provide comprehensive transport solutions that support your security objectives while ensuring efficient and timely delivery of all construction materials and equipment.",
+      "sidebar": {
+        "recentPost": "Recent Post",
+        "posts": [
+          {
+            "date": "09 July 2024",
+            "title": "Investing in Freight Broker Training"
+          },
+          {
+            "date": "09 July 2024",
+            "title": "Ways to Improve Your Last-Mile Strategy"
+          },
+          {
+            "date": "09 July 2024",
+            "title": "How to Recruit and Retain Drivers"
+          }
+        ]
+      }
+    }
   },
   "footer": {
     "email": "Email",
@@ -507,5 +574,21 @@
       "projects": "Projects",
       "commitment": "Commitment"
     }
+  },
+  "clients": {
+    "preHeader": "our clients",
+    "client1": {
+      "name": "Unibeton Ready Mix"
+    },
+    "client2": {
+      "name": "Marzouk Muslim Al-Mahmadi"
+    },
+    "client3": {
+      "name": "Al Kifah Ready-mix & Blocks (KRB)"
+    },
+    "client4": {
+      "name": "Premco Ready Mix"
+    },
+    "trustedPartner": "Trusted Partner"
   }
 }

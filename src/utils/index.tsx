@@ -1,14 +1,4 @@
 import { RiTwitterXFill } from "react-icons/ri";
-import { FaHardHat } from "react-icons/fa";
-import { MdPlumbing } from "react-icons/md";
-import { IoSettingsOutline, IoWaterOutline } from "react-icons/io5";
-import {
-  GiElectric,
-  GiPaintRoller,
-  GiMineTruck,
-  GiMetalBar,
-  GiFireExtinguisher,
-} from "react-icons/gi";
 
 export const thmPrimary = "#0e4563";
 export const thmSecondary = "#15b5e5";
@@ -57,23 +47,18 @@ export const SOCIALS = [
   },
 ];
 
-export const SERVICES_LINKS = [
-  "/services/excavation",
-  "/services/shoring",
-  "/services/water-proofing",
-  "/services/structure-work",
-  "/services/steel-structure",
-  "/services/mechanical",
-  "/services/electrical",
-  "/services/plumbing",
-  "/services/fire-fighting",
-  "/services/finishing-work",
-];
-
 export interface ServiceItem {
   href: string;
   translationKey: string;
   homeImage: string;
+}
+
+export interface ClientItem {
+  id: number;
+  name: string;
+  translationKey: string;
+  image: string;
+  link: string;
 }
 
 export const SERVICES: ServiceItem[] = [
@@ -134,83 +119,91 @@ export const SERVICES: ServiceItem[] = [
   },
 ];
 
-export const SERVICES_ICONS = [
-  <span key="excavation" className="react-icon-wrapper">
-    <GiMineTruck size={60} />
-  </span>,
-  <span key="shoring" className="react-icon-wrapper">
-    <FaHardHat size={60} />
-  </span>,
-  <span key="waterproofing" className="react-icon-wrapper">
-    <IoWaterOutline size={60} />
-  </span>,
-  <span key="structure" className="icon-construction-machine"></span>,
-  <span key="steel-structure" className="react-icon-wrapper">
-    <GiMetalBar size={60} />
-  </span>,
-  <span key="mechanical" className="react-icon-wrapper">
-    <IoSettingsOutline size={60} />
-  </span>,
-  <span key="electrical" className="react-icon-wrapper">
-    <GiElectric size={60} />
-  </span>,
-  <span key="plumbing" className="react-icon-wrapper">
-    <MdPlumbing size={60} />
-  </span>,
-  <span key="fire-fighting" className="react-icon-wrapper">
-    <GiFireExtinguisher size={60} />
-  </span>,
-  <span key="finishing" className="react-icon-wrapper">
-    <GiPaintRoller size={60} />
-  </span>,
+export const ALL_CERTIFICATES = [
+  {
+    id: 1,
+    image: "/assets/img/albarq/certificates/cert-1.png",
+    link: "/assets/pdf/1-Al-Barq-Commercial-Activity-Lisence.pdf",
+  },
+  {
+    id: 2,
+    image: "/assets/img/albarq/certificates/cert-2.png",
+    link: "/assets/pdf/2-CR-New.pdf",
+  },
+  {
+    id: 3,
+    image: "/assets/img/albarq/certificates/cert-3.png",
+    link: "/assets/pdf/3-Certificate-GOSI-barq-30-Sep-2024.pdf",
+  },
+  {
+    id: 4,
+    image: "/assets/img/albarq/certificates/cert-4.png",
+    link: "/assets/pdf/4.pdf",
+  },
+  {
+    id: 5,
+    image: "/assets/img/albarq/certificates/cert-5.png",
+    link: "/assets/pdf/5-Mawan-13-Trucks-003732.pdf",
+  },
+  {
+    id: 6,
+    image: "/assets/img/albarq/certificates/cert-6.png",
+    link: "/assets/pdf/6-Mawan-25-Trucks-003833.pdf",
+  },
+  {
+    id: 8,
+    image: "/assets/img/albarq/certificates/cert-8-1.png",
+    link: "/assets/pdf/8-Madinati.pdf",
+  },
+  {
+    id: 9,
+    image: "/assets/img/albarq/certificates/cert-8-2.png",
+    link: "/assets/pdf/8-Madinati.pdf",
+  },
+  {
+    id: 7,
+    image: "/assets/img/albarq/certificates/cert-7.png",
+    link: "/assets/pdf/7.pdf",
+  },
+  {
+    id: 10,
+    image: "/assets/img/albarq/certificates/cert-9.png",
+    link: "/assets/pdf/9.pdf",
+  },
+  {
+    id: 13,
+    image: "/assets/img/albarq/certificates/cert-10.png",
+    link: "/assets/pdf/10.pdf",
+  },
 ];
 
-export const EXCAVATION_IMAGES = [
-  "/assets/img/bak/services/excavation-1.jpeg",
-  "/assets/img/bak/services/excavation-2.jpg",
-];
-
-export const SHORING_IMAGES = [
-  "/assets/img/bak/services/shoring-1.png",
-  "/assets/img/bak/services/shoring-2.jpg",
-];
-
-export const WATER_PROOFING_IMAGES = [
-  "/assets/img/bak/services/water-proofing-1.jpg",
-  "/assets/img/bak/services/water-proofing-2.jpeg",
-];
-
-export const STRUCTURE_WORK_IMAGES = [
-  "/assets/img/bak/services/structure-work-1.jpg",
-  "/assets/img/bak/services/structure-work-2.jpg",
-];
-
-export const STEEL_STRUCTURE_IMAGES = [
-  "/assets/img/bak/services/steel-structure-1.png",
-  "/assets/img/bak/services/steel-structure-2.png",
-];
-
-export const MECHANICAL_IMAGES = [
-  "/assets/img/bak/services/mechanical-1.png",
-  "/assets/img/bak/services/mechanical-2.png",
-];
-
-export const ELECTRICAL_IMAGES = [
-  "/assets/img/bak/services/electrical-1.png",
-  "/assets/img/bak/services/electrical-2.png",
-];
-
-export const PLUMBING_IMAGES = [
-  "/assets/img/bak/services/plumbing-1.png",
-  "/assets/img/bak/services/plumbing-2.png",
-];
-
-export const FIRE_FIGHTING_IMAGES = [
-  "/assets/img/bak/services/fire-fighting-1.jpg",
-  "/assets/img/bak/services/fire-fighting-2.jpg",
-];
-
-export const FINISHING_WORK_IMAGES = [
-  "/assets/img/bak/services/finishing-work-1.png",
-  "/assets/img/bak/services/finishing-work-2.png",
+export const ALL_CLIENTS: ClientItem[] = [
+  {
+    id: 1,
+    name: "",
+    translationKey: "clients.client1.name",
+    image: "/assets/img/albarq/clients/client-1.jpeg",
+    link: "https://readymix.sa/ar/saudi/riyadh/riyadh/unibeton-readymix-riyadh.html",
+  },
+  {
+    id: 2,
+    name: "",
+    translationKey: "clients.client2.name",
+    image: "/assets/img/albarq/clients/client-2.jpeg",
+    link: "https://www.marzuk.org/",
+  },
+  {
+    id: 3,
+    name: "",
+    translationKey: "clients.client3.name",
+    image: "/assets/img/albarq/clients/client-3.jpeg",
+    link: "https://kifahreadymix.com/?lang=ar",
+  },
+  {
+    id: 4,
+    name: "",
+    translationKey: "clients.client4.name",
+    image: "/assets/img/albarq/clients/client-4.jpeg",
+    link: "https://premcoreadymix.wixsite.com/website",
+  },
 ];

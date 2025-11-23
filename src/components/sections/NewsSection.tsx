@@ -34,7 +34,7 @@ export default function NewsSection() {
                     <a>{newsItems[index]?.title || t("news.items.0.title")}</a>
                   </h4>
                   <div className="author-items">
-                    <Link href="/news-details" className="link-btn">
+                    <Link href="/news/1" className="link-btn">
                       {t("news.readMore")}{" "}
                       <i className="fa-solid fa-arrow-right" />
                     </Link>

@@ -27,7 +27,7 @@ const getMenuLinks = (t: (key: string) => string) => [
     name: t("menu.ourClients"),
   },
   {
-    href: "/certificates",
+    href: "/certifications",
     name: t("menu.certificates"),
   },
   {

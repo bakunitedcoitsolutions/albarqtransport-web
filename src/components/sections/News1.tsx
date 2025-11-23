@@ -47,7 +47,7 @@ export default function News1() {
                   >
                     <div className="news-content">
                       <h3 className="rtl:text-xl! rtl:md:text-2xl! rtl:xl:text-3xl!">
-                        <Link href="/news-details">
+                        <Link href="/news/1">
                           {newsItems[0]?.title || t("news.items.0.title")}
                         </Link>
                       </h3>
@@ -73,7 +73,7 @@ export default function News1() {
                         >
                           <div className="news-content flex flex-1 flex-col items-start">
                             <h4 className="rtl:text-lg! rtl:md:text-xl! rtl:xl:text-2xl!">
-                              <Link href="/news-details">
+                              <Link href="/news/1">
                                 {newsItem?.title || t("news.items.0.title")}
                               </Link>
                             </h4>
@@ -82,7 +82,7 @@ export default function News1() {
                                 t("news.items.0.description")}
                             </p>
                             <Link
-                              href="/news-details"
+                              href="/news/1"
                               className="link-btn rtl:text-sm! rtl:md:text-base!"
                             >
                               {t("news.readMore")}{" "}
@@ -104,7 +104,7 @@ export default function News1() {
 
                 <div className="mt-10! flex! justify-center! items-center!">
                   <Link
-                    href="/news-grid"
+                    href="/news"
                     className="theme-btn rtl:text-xl! rtl:md:text-2xl!"
                   >
                     {t("news.viewAllNews")}
