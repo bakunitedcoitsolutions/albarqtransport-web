@@ -1,11 +1,14 @@
 "use client";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+
 import { SERVICES } from "@/utils";
 import { cn } from "@/utils/helper";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const ServiceSidebar = ({ activeIndex }: { activeIndex: number }) => {
   const { t } = useLanguage();
+  const router = useRouter();
   return (
     <div className="main-sidebar">
       <div className="single-sidebar-widget">
@@ -22,8 +25,11 @@ const ServiceSidebar = ({ activeIndex }: { activeIndex: number }) => {
                 className={cn("cursor-pointer ", {
                   active: activeIndex === index,
                 })}
+                onClick={() => {
+                  router.push(service.href);
+                }}
               >
-                <Link href={service.href}>{t(service.translationKey)}</Link>
+                <a>{t(service.translationKey)}</a>
                 <span>
                   <i className="fa-regular fa-arrow-right-long" />
                 </span>
