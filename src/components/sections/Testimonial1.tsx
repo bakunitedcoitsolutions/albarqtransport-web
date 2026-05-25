@@ -1,13 +1,12 @@
 "use client";
 import { thmSecondary } from "@/utils";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 // import "swiper/css";
 
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import PreHeader from "../elements/PreHeader";
 import { en as enTranslations, ar as arTranslations } from "@/locales";
-import Link from "next/link";
 
 const getSwiperOptions = (isRTL: boolean) => ({
   modules: [Autoplay, Pagination, Navigation],
