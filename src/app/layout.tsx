@@ -14,6 +14,7 @@ import { ReactNode } from "react";
 import type { Metadata } from "next";
 import { tanseekArabic } from "@/lib/font";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import { ReactQueryProvider } from "@/lib";
 
 export const metadata: Metadata = {
   title: "Al-Barq | A Leading Transport Company",
@@ -40,8 +41,10 @@ export default function RootLayout({
 }: RootLayoutProps): React.ReactElement {
   return (
     <html lang="en" className={`${tanseekArabic.variable}`}>
-      <body>
-        <LanguageProvider>{children}</LanguageProvider>
+      <body suppressHydrationWarning={true}>
+        <ReactQueryProvider>
+          <LanguageProvider>{children}</LanguageProvider>
+        </ReactQueryProvider>
       </body>
     </html>
   );
