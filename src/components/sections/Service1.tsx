@@ -1,5 +1,4 @@
 "use client";
-// import "swiper/css";
 import Link from "next/link";
 
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
@@ -15,7 +14,7 @@ const getSwiperOptions = (isRTL: boolean) => ({
   loop: true,
   dir: isRTL ? "rtl" : "ltr",
   autoplay: {
-    delay: 992000,
+    delay: 4000,
     disableOnInteraction: false,
   },
   pagination: {
@@ -114,7 +113,7 @@ export default function Service1() {
                         >
                           {t("service.exploreMore")}{" "}
                           <i
-                            className={`fa-solid fa-arrow-right rtl:mr-2! rtl:rotate-[260deg]!`}
+                            className={`fa-solid fa-arrow-right rtl:mr-2! rtl:rotate-260!`}
                           />
                         </Link>
                       </div>

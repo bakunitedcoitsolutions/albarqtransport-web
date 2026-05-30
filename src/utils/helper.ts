@@ -25,3 +25,32 @@ export const truncateText = (text: string, maxLength: number = 120) => {
 
   return text.substring(0, endIndex).trim() + "...";
 };
+
+export const getYoutubeId = (url: string) => {
+  const regExp =
+    /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+  const match = url.match(regExp);
+  return match && match[2].length === 11 ? match[2] : null;
+};
+
+export const createSlug = (text: string, id: number | string) => {
+  return `${text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "")}-${id}`;
+};
+
+export const extractIdFromSlug = (slug: string): number | null => {
+  if (!slug) return null;
+
+  const parts = slug.split("-");
+  if (parts.length === 0) return null;
+
+  const lastPart = parts[parts.length - 1];
+  const id = parseInt(lastPart);
+  if (!isNaN(id)) {
+    return id;
+  }
+
+  return null;
+};

@@ -68,6 +68,11 @@ export const SERVICES: ServiceItem[] = [
     homeImage: "/assets/img/albarq/services/home/sand-supply.jpg",
   },
   {
+    href: "/services/heavy-equipment-rental",
+    translationKey: "menu.heavyEquipmentRental",
+    homeImage: "/assets/img/albarq/services/home/heavy-equipment.jpg",
+  },
+  {
     href: "/services/aggregate",
     translationKey: "menu.aggregate",
     homeImage: "/assets/img/albarq/services/home/aggregate-supply.jpg",
@@ -111,11 +116,6 @@ export const SERVICES: ServiceItem[] = [
     href: "/services/waste-removal",
     translationKey: "menu.wasteRemoval",
     homeImage: "/assets/img/albarq/services/home/waste-removal-truck.jpg",
-  },
-  {
-    href: "/services/heavy-equipment-rental",
-    translationKey: "menu.heavyEquipmentRental",
-    homeImage: "/assets/img/albarq/services/home/heavy-equipment.jpg",
   },
 ];
 

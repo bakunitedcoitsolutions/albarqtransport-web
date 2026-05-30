@@ -7,74 +7,15 @@ import Link from "next/link";
 
 import { useState } from "react";
 import ModalVideo from "react-modal-video";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
-
-const getSwiperOptions = (isRTL: boolean) => ({
-  modules: [Autoplay, Pagination, Navigation],
-  slidesPerView: 2,
-  spaceBetween: 30,
-  dir: isRTL ? "rtl" : "ltr",
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: false,
-  },
-  loop: true,
-
-  // Navigation
-  navigation: {
-    nextEl: ".h1n",
-    prevEl: ".h1p",
-  },
-
-  // Pagination
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-
-  breakpoints: {
-    320: {
-      slidesPerView: 1,
-      spaceBetween: 30,
-    },
-    575: {
-      slidesPerView: 1,
-      spaceBetween: 30,
-    },
-    767: {
-      slidesPerView: 1,
-      spaceBetween: 30,
-    },
-    991: {
-      slidesPerView: 2,
-      spaceBetween: 30,
-    },
-    1199: {
-      slidesPerView: 2,
-      spaceBetween: 30,
-    },
-    1350: {
-      slidesPerView: 2,
-      spaceBetween: 30,
-    },
-  },
-});
-
-const HERO_IMAGES = [
-  "/assets/img/albarq/banner/banner-1.jpg",
-  "/assets/img/albarq/banner/banner-2.jpg",
-  "/assets/img/albarq/banner/banner-3.jpg",
-  "/assets/img/albarq/banner/banner-4.jpg",
-  "/assets/img/albarq/banner/banner-5.jpg",
-  "/assets/img/albarq/banner/banner-6.jpg",
-];
+import HeroSwiper from "./HeroSwiper";
+import { useGetLatestVideo } from "@/lib/db/services/video/requests";
+import { getYoutubeId } from "@/utils/helper";
 
 export default function Hero1(): React.ReactElement {
   const [isOpen, setOpen] = useState<boolean>(false);
   const { isRTL, t } = useLanguage();
-  const swiperOptions = getSwiperOptions(isRTL);
+  const { data: latestVideo } = useGetLatestVideo();
   return (
     <>
       <section className="hero-section hero-1 fix section-padding">
@@ -113,39 +54,29 @@ export default function Hero1(): React.ReactElement {
                       className={`fa-regular fa-arrow-right rtl:rotate-180! rtl:pl-5!`}
                     />
                   </Link>
-                  <span
-                    className="button-text wow fadeInUp"
-                    data-wow-delay=".5s"
-                  >
-                    <a
-                      onClick={() => setOpen(true)}
-                      className="video-btn video-popup"
+                  {!!latestVideo?.videoLink && !!getYoutubeId(latestVideo?.videoLink) && (
+                    <span
+                      className="button-text wow fadeInUp"
+                      data-wow-delay=".5s"
                     >
-                      <i className="fa-solid fa-play rtl:rotate-180!" />
-                    </a>
-                    <span className="ms-3 d-line rtl:text-xl! rtl:mr-5!">
-                      {t("hero.play")}
+                      <a
+                        onClick={() => setOpen(true)}
+                        className="video-btn video-popup"
+                      >
+                        <i className="fa-solid fa-play rtl:rotate-180!" />
+                      </a>
+                      <span className="ms-3 d-line rtl:text-xl! rtl:mr-5!">
+                        {t("hero.play")}
+                      </span>
                     </span>
-                  </span>
+                  )}
                 </div>
               </div>
             </div>
             <div className="col-lg-5">
               <div className="hero-image-items">
                 <div className="swiper hero-slider">
-                  <Swiper
-                    key={isRTL ? "rtl" : "ltr"}
-                    {...swiperOptions}
-                    className="swiper-wrapper"
-                  >
-                    {HERO_IMAGES.map((image, index) => (
-                      <SwiperSlide key={index} className="swiper-slide">
-                        <div className="hero-image">
-                          <img src={image} alt="img" />
-                        </div>
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
+                  <HeroSwiper />
                   <div className="array-button">
                     <button className="array-prevs h1p direction-ltr">
                       <span className="rtl:rotate-180">
@@ -167,13 +98,16 @@ export default function Hero1(): React.ReactElement {
         </div>
       </section>
 
-      <ModalVideo
-        channel="youtube"
-        youtube={{ mute: 0, autoplay: 0 }}
-        isOpen={isOpen}
-        videoId="Cn4G2lZ_g2I"
-        onClose={() => setOpen(false)}
-      />
+      {!!latestVideo?.videoLink && !!getYoutubeId(latestVideo?.videoLink) && (
+        <ModalVideo
+          channel="youtube"
+          // @ts-ignore
+          autoplay
+          isOpen={isOpen}
+          videoId={getYoutubeId(latestVideo?.videoLink) ?? ""}
+          onClose={() => setOpen(false)}
+        />
+      )}
     </>
   );
 }

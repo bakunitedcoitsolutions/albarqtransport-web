@@ -6,7 +6,8 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 import { useLanguage } from "@/contexts/LanguageContext";
 import PreHeader from "../elements/PreHeader";
-import { en as enTranslations, ar as arTranslations } from "@/locales";
+import { useGetAllReviews } from "@/lib/db/services/review/requests";
+import Skeleton from "@/components/ui/Skeleton";
 
 const getSwiperOptions = (isRTL: boolean) => ({
   modules: [Autoplay, Pagination, Navigation],
@@ -60,12 +61,20 @@ const getSwiperOptions = (isRTL: boolean) => ({
 });
 
 export default function Testimonial1() {
-  const { isRTL, t, language } = useLanguage();
+  const { isRTL, t } = useLanguage();
   const swiperOptions = getSwiperOptions(isRTL);
-  const translations = language === "ar" ? arTranslations : enTranslations;
-  const testimonials = (translations.testimonial?.testimonials || []) as Array<{
-    text: string;
-  }>;
+  const { data: reviewsData, isLoading } = useGetAllReviews();
+
+  if (!isLoading && (!reviewsData || reviewsData?.length === 0)) {
+    return null;
+  }
+
+  const activeReviews =
+    reviewsData && reviewsData.length > 0
+      ? [...reviewsData].sort(
+          (a, b) => (a.displayOrderKey ?? 0) - (b.displayOrderKey ?? 0),
+        )
+      : [];
   return (
     <>
       <section className="testimonial-section fix section-padding section-bg">
@@ -93,39 +102,45 @@ export default function Testimonial1() {
                     </h2>
                   </div>
                   <div className="swiper testimonial-slider mt-3 mt-md-0">
-                    <Swiper
-                      key={isRTL ? "rtl" : "ltr"}
-                      {...swiperOptions}
-                      className="swiper-wrapper"
-                    >
-                      {testimonials.map((testimonial, index) => (
-                        <SwiperSlide key={index} className="swiper-slide">
-                          <div className="testi-content">
-                            <div className="icon">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width={32}
-                                height={32}
-                                viewBox="0 0 32 32"
-                                fill="none"
-                              >
-                                <path
-                                  d="M0 4V28L12 16V4H0Z"
-                                  fill={thmSecondary}
-                                />
-                                <path
-                                  d="M20 4V28L32 16V4H20Z"
-                                  fill={thmSecondary}
-                                />
-                              </svg>
-                              <h4 className="rtl:text-xl! rtl:md:text-3xl!">
-                                {testimonial.text}
-                              </h4>
+                    {isLoading ? (
+                      <div className="w-full flex items-center justify-center p-5">
+                        <Skeleton height="100px" containerClassName="w-full" />
+                      </div>
+                    ) : (
+                      <Swiper
+                        key={isRTL ? "rtl" : "ltr"}
+                        {...swiperOptions}
+                        className="swiper-wrapper"
+                      >
+                        {activeReviews.map((review) => (
+                          <SwiperSlide key={review.id} className="swiper-slide">
+                            <div className="testi-content">
+                              <div className="icon">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width={32}
+                                  height={32}
+                                  viewBox="0 0 32 32"
+                                  fill="none"
+                                >
+                                  <path
+                                    d="M0 4V28L12 16V4H0Z"
+                                    fill={thmSecondary}
+                                  />
+                                  <path
+                                    d="M20 4V28L32 16V4H20Z"
+                                    fill={thmSecondary}
+                                  />
+                                </svg>
+                                <h4 className="rtl:text-xl! rtl:md:text-3xl!">
+                                  {isRTL ? review.reviewAr : review.reviewEn}
+                                </h4>
+                              </div>
                             </div>
-                          </div>
-                        </SwiperSlide>
-                      ))}
-                    </Swiper>
+                          </SwiperSlide>
+                        ))}
+                      </Swiper>
+                    )}
                   </div>
                 </div>
               </div>

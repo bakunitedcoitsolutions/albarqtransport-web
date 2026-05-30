@@ -3,10 +3,12 @@
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { ALL_CERTIFICATES } from "@/utils";
 import PreHeader from "../elements/PreHeader";
+import { getSignedUrl } from "@/utils/storage";
+import Skeleton from "@/components/ui/Skeleton";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { useGetAllCertificates } from "@/lib/db/services/certificate/requests";
 
 const getSwiperOptions = (isRTL: boolean) => ({
   modules: [Autoplay, Pagination, Navigation],
@@ -44,6 +46,18 @@ const getSwiperOptions = (isRTL: boolean) => ({
 export default function Certificates() {
   const { isRTL, t } = useLanguage();
   const swiperOptions = getSwiperOptions(isRTL);
+  const { data: certsData, isLoading } = useGetAllCertificates();
+
+  if (!isLoading && (!certsData || certsData?.length === 0)) {
+    return null;
+  }
+
+  const activeCertificates =
+    certsData && certsData.length > 0
+      ? [...certsData].sort(
+          (a, b) => (a.displayOrderKey ?? 0) - (b.displayOrderKey ?? 0),
+        )
+      : [];
 
   return (
     <>
@@ -64,29 +78,46 @@ export default function Certificates() {
         </div>
         <div className="container">
           <div className="swiper certificate-slider">
-            <Swiper
-              key={isRTL ? "rtl" : "ltr"}
-              {...swiperOptions}
-              className="swiper-wrapper"
-            >
-              {ALL_CERTIFICATES.map((cert: any) => (
-                <SwiperSlide key={cert.id} className="swiper-slide">
-                  <div className="certificate-item">
-                    <img
-                      src={cert.image}
-                      alt={`Certificate ${cert.id}`}
-                      className="w-full h-auto rounded-lg shadow-md"
-                    />
-                    <div className="certificate-overlay"></div>
-                    <div className="certificate-icon-wrapper">
-                      <Link href={cert.link} target="_blank">
-                        <i className="fa-solid fa-link"></i>
-                      </Link>
-                    </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+            {isLoading ? (
+              <div className="w-full flex items-center justify-center p-5">
+                <Skeleton
+                  height="300px"
+                  containerClassName="w-full max-w-[1200px]"
+                />
+              </div>
+            ) : (
+              <Swiper
+                key={isRTL ? "rtl" : "ltr"}
+                {...swiperOptions}
+                className="swiper-wrapper"
+              >
+                {activeCertificates.map((cert) => {
+                  const imageUrl = cert.certificateImage
+                    ? getSignedUrl(cert.certificateImage)
+                    : "";
+                  const pdfUrl = cert.certificatePdf
+                    ? getSignedUrl(cert.certificatePdf)
+                    : "#";
+                  return (
+                    <SwiperSlide key={cert.id} className="swiper-slide">
+                      <div className="certificate-item">
+                        <img
+                          src={imageUrl}
+                          alt={`Certificate ${cert.id}`}
+                          className="w-full h-auto rounded-lg shadow-md"
+                        />
+                        <div className="certificate-overlay"></div>
+                        <div className="certificate-icon-wrapper">
+                          <Link href={pdfUrl} target="_blank">
+                            <i className="fa-solid fa-link"></i>
+                          </Link>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                  );
+                })}
+              </Swiper>
+            )}
             <div className="mt-10! flex! justify-center! items-center!">
               <Link
                 href="/certifications"

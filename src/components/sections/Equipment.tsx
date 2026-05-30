@@ -3,15 +3,21 @@
 import { useEffect } from "react";
 import PreHeader from "../elements/PreHeader";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { en as enTranslations, ar as arTranslations } from "@/locales";
+import { useGetActiveFleet } from "@/lib/db/services/fleet/requests";
+import { getSignedUrl } from "@/utils/storage";
+import Skeleton from "@/components/ui/Skeleton";
 
 export default function Equipment() {
-  const { t, language } = useLanguage();
-  const translations = language === "ar" ? arTranslations : enTranslations;
-  const equipment = ((translations as any).equipment?.items || []) as Array<{
-    name: string;
-  }>;
+  const { isRTL, t } = useLanguage();
+  const { data: fleetData, isLoading } = useGetActiveFleet();
+
+  const activeFleet = fleetData && fleetData.length > 0
+    ? [...fleetData].sort((a, b) => (a.displayOrderKey ?? 0) - (b.displayOrderKey ?? 0))
+    : [];
+
   useEffect(() => {
+    if (activeFleet.length === 0) return;
+
     const mainBoxes = document.querySelectorAll(".main-box, .box");
     const getSlide = mainBoxes.length - 1;
     const slideCal = 100 / getSlide + "%";
@@ -21,31 +27,44 @@ export default function Equipment() {
       box.style.width = slideCal;
     });
 
+    const handleMouseEnter = (event: Event) => {
+      boxes.forEach((b) => b.classList.remove("active"));
+      (event.currentTarget as HTMLElement).classList.add("active");
+    };
+
     boxes.forEach((box) => {
-      box.addEventListener("mouseenter", () => {
-        boxes.forEach((b) => b.classList.remove("active"));
-        box.classList.add("active");
-      });
+      box.addEventListener("mouseenter", handleMouseEnter);
     });
 
     // Cleanup event listeners when component unmounts
     return () => {
       boxes.forEach((box) => {
-        box.removeEventListener("mouseenter", () => {
-          boxes.forEach((b) => b.classList.remove("active"));
-          box.classList.add("active");
-        });
+        box.removeEventListener("mouseenter", handleMouseEnter);
       });
     };
-  }, []);
+  }, [activeFleet]);
 
-  const equipmentImages = [
-    "/assets/img/albarq/equipment/eq-2.jpeg",
-    "/assets/img/albarq/equipment/eq-3.jpeg",
-    "/assets/img/albarq/equipment/eq-1.jpeg",
-    "/assets/img/albarq/equipment/flat-bed.jpg",
-    "/assets/img/albarq/equipment/excavator.jpg",
-  ];
+  if (isLoading) {
+    return (
+      <section className="project-section bg-white! fix section-padding" id="equipment">
+        <div className="container">
+          <div className="section-title text-center">
+            <PreHeader text={t("equipment.preHeader")} />
+            <h2 className="wow fadeInUp rtl:text-3xl! rtl:md:text-4xl! rtl:xl:text-6xl!" data-wow-delay=".2s">
+              {t("equipment.title")}
+            </h2>
+          </div>
+          <div className="w-full mt-5 flex justify-center items-center">
+            <Skeleton height="350px" containerClassName="w-full max-w-[1200px]" />
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (!isLoading && (!fleetData || fleetData?.length === 0)) {
+    return null;
+  }
 
   return (
     <>
@@ -67,12 +86,12 @@ export default function Equipment() {
         <div className="container-fluid">
           <div className="project-wrapper">
             <div className="main-box">
-              {equipment.map((item, index) => {
+              {activeFleet.map((item, index) => {
                 const delay = index * 0.2;
-                const image = equipmentImages[index] || equipmentImages[0];
+                const image = item.image ? getSignedUrl(item.image) : "/assets/img/albarq/equipment/eq-2.jpeg";
                 return (
                   <div
-                    key={index}
+                    key={item.id}
                     className="box wow fadeInUp bg-cover! bg-center! bg-no-repeat!"
                     style={{
                       backgroundImage: `url(${image})`,
@@ -81,7 +100,7 @@ export default function Equipment() {
                   >
                     <div className="project-content flex! justify-center!">
                       <h3 className="rtl:text-3xl!">
-                        <a>{item.name}</a>
+                        <a>{isRTL ? item.nameAr : item.nameEn}</a>
                       </h3>
                     </div>
                   </div>
