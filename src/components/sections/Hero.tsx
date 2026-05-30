@@ -12,7 +12,7 @@ import HeroSwiper from "./HeroSwiper";
 import { useGetLatestVideo } from "@/lib/db/services/video/requests";
 import { getYoutubeId } from "@/utils/helper";
 
-export default function Hero1(): React.ReactElement {
+export default function Hero(): React.ReactElement {
   const [isOpen, setOpen] = useState<boolean>(false);
   const { isRTL, t } = useLanguage();
   const { data: latestVideo } = useGetLatestVideo();
@@ -54,22 +54,23 @@ export default function Hero1(): React.ReactElement {
                       className={`fa-regular fa-arrow-right rtl:rotate-180! rtl:pl-5!`}
                     />
                   </Link>
-                  {!!latestVideo?.videoLink && !!getYoutubeId(latestVideo?.videoLink) && (
-                    <span
-                      className="button-text wow fadeInUp"
-                      data-wow-delay=".5s"
-                    >
-                      <a
-                        onClick={() => setOpen(true)}
-                        className="video-btn video-popup"
+                  {!!latestVideo?.videoLink &&
+                    !!getYoutubeId(latestVideo?.videoLink) && (
+                      <span
+                        className="button-text wow fadeInUp"
+                        data-wow-delay=".5s"
                       >
-                        <i className="fa-solid fa-play rtl:rotate-180!" />
-                      </a>
-                      <span className="ms-3 d-line rtl:text-xl! rtl:mr-5!">
-                        {t("hero.play")}
+                        <a
+                          onClick={() => setOpen(true)}
+                          className="video-btn video-popup"
+                        >
+                          <i className="fa-solid fa-play rtl:rotate-180!" />
+                        </a>
+                        <span className="ms-3 d-line rtl:text-xl! rtl:mr-5!">
+                          {t("hero.play")}
+                        </span>
                       </span>
-                    </span>
-                  )}
+                    )}
                 </div>
               </div>
             </div>

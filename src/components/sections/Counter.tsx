@@ -12,7 +12,7 @@ interface CounterItem {
   useCounter?: boolean;
 }
 
-export default function Counter1() {
+export default function Counter() {
   const { t } = useLanguage();
 
   const counterItems: CounterItem[] = [

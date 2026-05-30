@@ -1,5 +1,5 @@
 import Layout from "@/components/layout/Layout";
-import About1 from "@/components/sections/About1";
+import About from "@/components/sections/About";
 import Achievements from "@/components/sections/Achievements";
 export default function AboutUsPage(): React.ReactElement {
   return (
@@ -10,7 +10,7 @@ export default function AboutUsPage(): React.ReactElement {
         breadcrumbText="menu.aboutUs"
         breadcrumbTitle="menu.aboutUsTitle"
       >
-        <About1 showMoreButton={false} />
+        <About showMoreButton={false} />
         <Achievements />
       </Layout>
     </>

@@ -40,11 +40,13 @@ const getSwiperOptions = (isRTL: boolean) => ({
   },
 });
 
-interface Brand1Props {
+interface ClientProps {
   alt?: boolean;
 }
 
-export default function Brand1({ alt }: Brand1Props): React.ReactElement | null {
+export default function Clients({
+  alt,
+}: ClientProps): React.ReactElement | null {
   const { isRTL, t } = useLanguage();
   const swiperOptions = getSwiperOptions(isRTL);
   const { data: clientsData, isLoading } = useGetAllClients();
@@ -53,9 +55,12 @@ export default function Brand1({ alt }: Brand1Props): React.ReactElement | null 
     return null;
   }
 
-  const activeClients = clientsData && clientsData.length > 0
-    ? [...clientsData].sort((a, b) => (a.displayOrderKey ?? 0) - (b.displayOrderKey ?? 0))
-    : [];
+  const activeClients =
+    clientsData && clientsData.length > 0
+      ? [...clientsData].sort(
+          (a, b) => (a.displayOrderKey ?? 0) - (b.displayOrderKey ?? 0),
+        )
+      : [];
 
   return (
     <>
@@ -79,7 +84,10 @@ export default function Brand1({ alt }: Brand1Props): React.ReactElement | null 
           <div className="swiper brand-slider">
             {isLoading ? (
               <div className="w-full flex items-center justify-center p-5">
-                <Skeleton height="100px" containerClassName="w-full max-w-[1200px]" />
+                <Skeleton
+                  height="100px"
+                  containerClassName="w-full max-w-[1200px]"
+                />
               </div>
             ) : (
               <Swiper

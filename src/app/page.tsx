@@ -1,34 +1,34 @@
 import Layout from "@/components/layout/Layout";
-import About1 from "@/components/sections/About1";
-import Brand1 from "@/components/sections/Brand1";
+import About from "@/components/sections/About";
+import Clients from "@/components/sections/Clients";
 import Contact from "@/components/sections/Contact";
 import CtaBanner from "@/components/sections/CtaBanner";
 import Faq from "@/components/sections/Faq";
-import Hero1 from "@/components/sections/Hero1";
-import News1 from "@/components/sections/News1";
+import Hero from "@/components/sections/Hero";
+import News from "@/components/sections/News";
 import OurSkills from "@/components/sections/OurSkills";
 import Equipment from "@/components/sections/Equipment";
-import Service1 from "@/components/sections/Service1";
-import Team1 from "@/components/sections/Team1";
-import Testimonial1 from "@/components/sections/Testimonial1";
+import Service from "@/components/sections/Service";
+import Materials from "@/components/sections/Materials";
+import Testimonial from "@/components/sections/Testimonial";
 import Certificates from "@/components/sections/Certificates";
 
 export default function HomePage(): React.ReactElement {
   return (
     <>
       <Layout headerStyle={1} footerStyle={1}>
-        <Hero1 />
-        <About1 />
-        <Service1 />
+        <Hero />
+        <About />
+        <Service />
         <CtaBanner />
         <OurSkills />
-        <Testimonial1 />
+        <Testimonial />
         <Equipment />
         <Faq />
-        <Team1 />
+        <Materials />
         <Contact />
-        <News1 />
-        <Brand1 />
+        <News />
+        <Clients />
         <Certificates />
       </Layout>
     </>

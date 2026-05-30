@@ -60,7 +60,7 @@ const getSwiperOptions = (isRTL: boolean) => ({
   },
 });
 
-export default function Testimonial1() {
+export default function Testimonial() {
   const { isRTL, t } = useLanguage();
   const swiperOptions = getSwiperOptions(isRTL);
   const { data: reviewsData, isLoading } = useGetAllReviews();

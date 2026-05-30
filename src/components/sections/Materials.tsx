@@ -9,10 +9,10 @@ const selectedServices = SERVICES.filter(
     service.href === "/services/sand" ||
     service.href === "/services/aggregate" ||
     service.href === "/services/soil" ||
-    service.href === "/services/stone"
+    service.href === "/services/stone",
 );
 
-export default function Team1() {
+export default function Materials() {
   const { t } = useLanguage();
 
   const serviceImages = [

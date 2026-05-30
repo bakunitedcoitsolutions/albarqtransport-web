@@ -9,7 +9,7 @@ import Skeleton from "@/components/ui/Skeleton";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useGetHomeBlogs } from "@/lib/db/services/blog/requests";
 
-export default function News1() {
+export default function News() {
   const { isRTL, t } = useLanguage();
   const { data: blogsData, isLoading } = useGetHomeBlogs();
 

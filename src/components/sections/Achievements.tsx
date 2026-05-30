@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import PreHeader from "../elements/PreHeader";
-import Counter1 from "./Counter1";
+import Counter from "./Counter";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Achievements() {
@@ -36,7 +36,7 @@ export default function Achievements() {
                   <p className="mt-3 mt-md-0 wow fadeInUp rtl:text-lg! rtl:md:text-xl! rtl:xl:text-2xl!">
                     {t("achievements.description")}
                   </p>
-                  <Counter1 />
+                  <Counter />
                 </div>
               </div>
               <div

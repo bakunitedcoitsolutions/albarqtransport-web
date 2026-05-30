@@ -10,7 +10,7 @@ import { useGetLatestVideo } from "@/lib/db/services/video/requests";
 import { getYoutubeId } from "@/utils/helper";
 import { getSignedUrl } from "@/utils/storage";
 
-export default function About1({
+export default function About({
   showMoreButton = true,
 }: {
   showMoreButton?: boolean;
@@ -52,26 +52,31 @@ export default function About1({
                     className="wow fadeInLeft"
                     data-wow-delay=".2s"
                   />
-                  {!!latestVideo?.videoLink && !!getYoutubeId(latestVideo.videoLink) && (
-                    <div
-                      className="about-image-2 wow fadeInUp"
-                      data-wow-delay=".4s"
-                    >
-                      <img
-                        src={latestVideo?.coverImage ? getSignedUrl(latestVideo.coverImage) : "/assets/img/albarq/about/about-video-cover.jpg"}
-                        alt="About Video Cover"
-                        className="h-40! md:h-56!"
-                      />
-                      <div className="video-box">
-                        <a
-                          onClick={() => setOpen(true)}
-                          className="video-btn video-popup"
-                        >
-                          <i className="fas fa-play" />
-                        </a>
+                  {!!latestVideo?.videoLink &&
+                    !!getYoutubeId(latestVideo.videoLink) && (
+                      <div
+                        className="about-image-2 wow fadeInUp"
+                        data-wow-delay=".4s"
+                      >
+                        <img
+                          src={
+                            latestVideo?.coverImage
+                              ? getSignedUrl(latestVideo.coverImage)
+                              : "/assets/img/albarq/about/about-video-cover.jpg"
+                          }
+                          alt="About Video Cover"
+                          className="h-40! md:h-56!"
+                        />
+                        <div className="video-box">
+                          <a
+                            onClick={() => setOpen(true)}
+                            className="video-btn video-popup"
+                          >
+                            <i className="fas fa-play" />
+                          </a>
+                        </div>
                       </div>
-                    </div>
-                  )}
+                    )}
                   <div className="about-line-shape">
                     <img src="/assets/img/about/about-shape-3.png" alt="img" />
                   </div>
